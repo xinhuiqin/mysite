@@ -142,3 +142,49 @@ STATIC_URL = '/static/'
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# A sample logging configuration. The only tangible logging
+# performed by this configuration is to send an email to
+# the site admins on every HTTP 500 error.
+# See http://docs.djangoproject.com/en/dev/topics/logging for
+# more details on how to customize your logging configuration.
+WORK_PATH = os.path.abspath(os.path.dirname(__file__))
+PRJ_NAME = os.path.split(WORK_PATH)[-1]
+LOG_PATH = "/var/log/sweeneys/%s.log" % PRJ_NAME
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': 'sweeneys %(levelname)s %(asctime)s %(module)s %(funcName)s %(lineno)d %(message)s'
+        },
+        'simple': {
+            'format': 'sweeneys %(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'verbose',
+            'filename': LOG_PATH,
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins', 'file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'default': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    }
+}
