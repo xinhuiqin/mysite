@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'allauth',
 
     'user',
-
+    'home',
 ]
 SITE_ID = 1
 MIDDLEWARE = [
@@ -64,7 +64,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -172,7 +172,7 @@ LOG_PATH = "/var/log/sweeneys/%s.log" % PRJ_NAME
 #             'level': 'DEBUG',
 #             'class': 'logging.FileHandler',
 #             'formatter': 'verbose',
-#             'filename': LOG_PATH,
+#             'filename': LOG_PATH, # 必须保证用户对该目录有读写权限
 #         },
 #     },
 #     'loggers': {
