@@ -151,40 +151,42 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 WORK_PATH = os.path.abspath(os.path.dirname(__file__))
 PRJ_NAME = os.path.split(WORK_PATH)[-1]
 LOG_PATH = "/var/log/sweeneys/%s.log" % PRJ_NAME
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': 'sweeneys %(levelname)s %(asctime)s %(module)s %(funcName)s %(lineno)d %(message)s'
-        },
-        'simple': {
-            'format': 'sweeneys %(levelname)s %(message)s'
-        },
-    },
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler'
-        },
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'formatter': 'verbose',
-            'filename': LOG_PATH,
-        },
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins', 'file'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-        'default': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    }
-}
+#
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'verbose': {
+#             'format': 'sweeneys %(levelname)s %(asctime)s %(module)s %(funcName)s %(lineno)d %(message)s'
+#         },
+#         'simple': {
+#             'format': 'sweeneys %(levelname)s %(message)s'
+#         },
+#     },
+#     'handlers': {
+#         'mail_admins': {
+#             'level': 'ERROR',
+#             'class': 'django.utils.log.AdminEmailHandler'
+#         },
+#         'file': {
+#             'level': 'DEBUG',
+#             'class': 'logging.FileHandler',
+#             'formatter': 'verbose',
+#             'filename': LOG_PATH,
+#         },
+#     },
+#     'loggers': {
+#         'django.request': {
+#             'handlers': ['mail_admins', 'file'],
+#             'level': 'ERROR',
+#             'propagate': True,
+#         },
+#         'default': {
+#             'handlers': ['file'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     }
+# }
+# 自定义用户模型
+AUTH_USER_MODEL = 'user.USER'  # user是应用名，USER是模型名
