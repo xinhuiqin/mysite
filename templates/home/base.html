@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>{% block head_title %}{% endblock %}</title>
-     <link href="{% static 'css/home/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/home/base.css' %}" rel="stylesheet">
     {% block extra_head %}
     {% endblock %}
 </head>
@@ -16,7 +16,19 @@
     </div>
 {% endblock %}
 <div id="footer">
-
+    <div id="footer-nav">
+        <ul>
+            <li>
+                <a >Copyright ©2018-现在，Sweeneys的官方网站</a>
+            </li>
+            <li >
+                <a href="https://www.aliyun.com/">托管于阿里云</a>
+            </li>
+            <li>
+                <a  href="">粤ICP备19001222号-1</a>
+            </li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>

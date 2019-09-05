@@ -149,8 +149,8 @@ STATICFILES_DIRS = [
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(BASE_DIR, 'static')
-]
 
+]
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
@@ -158,7 +158,7 @@ STATICFILES_DIRS = [
 # more details on how to customize your logging configuration.
 WORK_PATH = os.path.abspath(os.path.dirname(__file__))
 PRJ_NAME = os.path.split(WORK_PATH)[-1]
-LOG_PATH = "/var/log/sweeneys/%s.log" % PRJ_NAME
+LOG_PATH = "/var/log/sweeneys/mysite/%s.log" % PRJ_NAME
 #
 # LOGGING = {
 #     'version': 1,
