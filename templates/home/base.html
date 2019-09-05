@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+<head>
+    <title>{% block head_title %}{% endblock %}</title>
+     <link href="{% static 'css/home/base.css' %}" rel="stylesheet">
+    {% block extra_head %}
+    {% endblock %}
+</head>
+<body>
+<div id="header">
+
+</div>
+{% block container %}
+    <div id="container">
+
+    </div>
+{% endblock %}
+<div id="footer">
+
+</div>
+</body>
+</html>
