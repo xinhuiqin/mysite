@@ -198,3 +198,8 @@ LOG_PATH = "/var/log/sweeneys/mysite/%s.log" % PRJ_NAME
 # }
 # 自定义用户模型
 AUTH_USER_MODEL = 'user.USER'  # user是应用名，USER是模型名
+
+# 网站默认设置和上下文信息
+SITE_END_TITLE = os.getenv('Sweeneys_SITE_END_TITLE', 'Sweeneys')
+SITE_DESCRIPTION = os.getenv('Sweeneys_SITE_DESCRIPTION', 'Sweeneys的官方网站')
+SITE_KEYWORDS = os.getenv('Sweeneys_SITE_KEYWORDS', 'Sweeneys,Python,Django, Nginx, Gunicorn, Supervisor, uWSGI, WSGI')

@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
-class USER(AbstractUser):
+class User(AbstractUser):
     """用户
 
     """
