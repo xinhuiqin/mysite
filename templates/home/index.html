@@ -1,1 +1,32 @@
 {% extends 'home/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home/index.css' %}"/>
+{% endblock %}
+
+{% block container %}
+    <div class="index_bg"></div>
+    <div class="slogan">
+        <div><a href="https://www.python.org" target="_blank">人生苦短，我用Python</a></div>
+    </div>
+    <div class="contantus clear">
+        <div class="center">
+            <h3>联系我</h3>
+            <ul>
+                <li class="contantus-1">
+                    <h4>地址</h4>
+                    <p>深圳</p>
+                </li>
+                <li class="contantus-2">
+                    <h4>电话</h4>
+                    <p>13407829215</p>
+                </li>
+                <li class="contantus-3">
+                    <h4>邮箱</h4>
+                    <p><a href="mailto:952328342@qq.com">952328342@qq.com</a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

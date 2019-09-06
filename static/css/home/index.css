@@ -1,0 +1,177 @@
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+ins {
+    text-decoration: none;
+}
+
+i, em {
+    font-style: normal;
+}
+
+input {
+    border: none;
+}
+
+select, input, button, button img, label {
+    vertical-align: middle
+}
+
+body, h1, h2, h3, ul, li, form, p, img {
+    border: 0
+}
+
+input, button, select, img {
+    margin: 0;
+    line-height: normal
+}
+
+body {
+    min-width: 1200px;
+}
+
+.fl, .fr {
+    display: inline
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.clear, .area {
+    zoom: 1;
+}
+
+.clear:after, .area:after {
+    content: ".";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+
+.center {
+    width: 1200px;
+    margin: auto;
+}
+
+h3 {
+    width: 1200px;
+    height: 100px;
+    font-size: 30px;
+    background: url(../../images/home/contantus.png) center center no-repeat;
+    padding-bottom: 20px;
+}
+.index_bg {
+    height: 563px;
+    background: url(../../images/home/index_bg.jpg) center center no-repeat;
+}
+.slogan {
+    width: 100%;
+    height: 228px;
+    background-color: #242830;
+}
+.slogan a{
+    color: #fff;
+    text-decoration: none;
+}
+.slogan div {
+    width: 356px;
+    height: 87px;
+    margin: auto;
+    line-height: 87px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid #fff;
+    position: relative;
+    top: 30%;
+}
+
+.slogan div:hover {
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 1s;
+}
+
+.contantus {
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    background-color: #f3f5f8;
+    margin: auto;
+}
+
+.contantus h3 {
+    width: 1200px;
+    height: 160px;
+    font-size: 25px;
+    padding-top: 40px;
+    background: url(../../images/home/contantus.png) center center no-repeat;
+}
+
+.contantus ul li {
+    width: 300px;
+    height: 130px;
+    padding-top: 60px;
+    border: 1px solid #000;
+    display: inline-block;
+}
+
+.contantus-1 {
+    margin-right: 80px;
+}
+
+.contantus-2 {
+    margin-right: 80px;
+}
+
+.contantus ul .contantus-1 {
+    background: url('../../images/home/site.png') center 20px no-repeat;
+}
+
+.contantus ul .contantus-2 {
+    background: url('../../images/home/mobile.png') center 20px no-repeat;
+}
+
+.contantus ul .contantus-3 {
+    background: url('../../images/home/fly.png') center 20px no-repeat;
+}
+
+.contantus ul h4 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+.contantus ul p {
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+}
+.contantus ul p a {
+    color: #000;
+    text-decoration: none;
+}

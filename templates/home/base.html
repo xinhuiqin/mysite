@@ -3,34 +3,38 @@
 <head>
     <title>{% block head_title %}{% endblock %}</title>
     <link href="{% static 'css/home/base.css' %}" rel="stylesheet">
-    {% block extra_head %}
-    {% endblock %}
+    {% block css %}{% endblock %}
+    {% block js %}{% endblock %}
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
-<div id="wrapper">
-    <div id="header">
-
+<div class="banner">
+    <div class="topnav">
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">文章</a></li>
+            <li><a href="">登录</a></li>
+            <li><a href="">注册</a></li>
+        </ul>
     </div>
+</div>
+
+<div id="container">
     {% block container %}
-        <div id="container">
-
-        </div>
     {% endblock %}
-    <div id="footer">
-        <div id="footer-nav">
-            <ul>
-                <li>
-                    <a>Copyright ©2018-现在，Sweeneys的官方网站</a>
-                </li>
-                <li>
-                    <a href="https://www.aliyun.com/">托管于阿里云</a>
-                </li>
-                <li>
-                    <a href="">粤ICP备19001222号-1</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+</div>
+<div class="footer">
+    <ul>
+        <li>
+            <a>Copyright ©2018-现在，覃新会的官方网站</a>
+        </li>
+        <li>
+            <a href="https://www.aliyun.com/" target="_blank">托管于阿里云</a>
+        </li>
+        <li>
+            <a href="http://beian.miit.gov.cn" target="_blank">粤ICP备19001222号-1</a>
+        </li>
+    </ul>
 </div>
 </body>
 </html>
