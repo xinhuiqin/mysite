@@ -17,17 +17,15 @@ class Category(models.Model):
     """
     文章分类
     """
-    name = models.CharField(max_length=100, verbose_name='分类名称')
+    name = models.CharField(max_length=100, unique=True, verbose_name='分类名称')
     slug = models.SlugField(unique=True, verbose_name='唯一标识')
     description = models.TextField(max_length=300, default=settings.SITE_DESCRIPTION, verbose_name='分类描述')
     status = models.IntegerField(default=1, choices=STATUS, verbose_name='状态')
-    sort = models.IntegerField(blank=True, verbose_name='排序')
     create_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     update_at = models.DateTimeField(auto_now=True, verbose_name='更新时间')
-    delete_at = models.DateTimeField(auto_now=True, verbose_name='删除时间')
 
     class Meta:
-        verbose_name = '文章分类'
+        verbose_name = '分类'
         verbose_name_plural = verbose_name
         ordering = ['name']
 
@@ -45,14 +43,12 @@ class Tag(models.Model):
     """
     文章标签
     """
-    name = models.CharField(max_length=100, verbose_name='标签名称')
+    name = models.CharField(max_length=100, unique=True, verbose_name='标签名称')
     slug = models.SlugField(unique=True, verbose_name='唯一标识')
     description = models.TextField(max_length=300, default=settings.SITE_DESCRIPTION, verbose_name='分类描述')
     status = models.IntegerField(default=1, choices=STATUS, verbose_name='状态')
-    sort = models.IntegerField(blank=True, verbose_name='排序')
     create_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     update_at = models.DateTimeField(auto_now=True, verbose_name='更新时间')
-    delete_at = models.DateTimeField(auto_now=True, verbose_name='删除时间')
 
     class Meta:
         verbose_name = '标签'
@@ -66,7 +62,7 @@ class Tag(models.Model):
         return reverse('blog:tag', kwargs={'slug': self.slug})
 
     def get_article_list(self):
-        '''返回当前标签下所有发表的文章列表'''
+        """返回当前标签下所有发表的文章列表"""
         return Article.objects.filter(tags=self)
 
 
@@ -74,12 +70,10 @@ class Keyword(models.Model):
     """
     文章关键词
     """
-    name = models.CharField(max_length=100, verbose_name='文章关键词')
+    name = models.CharField(max_length=100, unique=True, verbose_name='文章关键词')
     status = models.IntegerField(default=1, choices=STATUS, verbose_name='状态')
-    sort = models.IntegerField(blank=True, verbose_name='排序')
     create_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     update_at = models.DateTimeField(auto_now=True, verbose_name='更新时间')
-    delete_at = models.DateTimeField(auto_now=True, verbose_name='删除时间')
 
     class Meta:
         verbose_name = '关键词'
@@ -96,20 +90,18 @@ class Article(models.Model):
     """
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='作者')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='文章分类')
-    tags = models.ManyToManyField(Tag, on_delete=models.CASCADE, verbose_name='文章标签')
-    keywords = models.ManyToManyField(Keyword, on_delete=models.CASCADE, verbose_name='文章关键词')
+    tags = models.ManyToManyField(Tag, verbose_name='文章标签')
+    keywords = models.ManyToManyField(Keyword, verbose_name='文章关键词')
     title = models.CharField(max_length=150, verbose_name='文章标题')
-    summary = models.TextField(max_length=250, default='', verbose_name='文章摘要')
+    summary = models.TextField(max_length=250, blank=True, default='', verbose_name='文章摘要')
     body = models.TextField(verbose_name='文章内容')
     img_link = models.CharField(default=IMG_LINK, max_length=255, verbose_name='文章图片')
     views = models.IntegerField(default=0, verbose_name='文章阅读量')
     is_top = models.BooleanField(default=False, verbose_name='是否置顶')
     slug = models.SlugField(unique=True, verbose_name='唯一标识')
     status = models.IntegerField(default=1, choices=STATUS, verbose_name='状态')
-    sort = models.IntegerField(blank=True, verbose_name='排序')
     create_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     update_at = models.DateTimeField(auto_now=True, verbose_name='更新时间')
-    delete_at = models.DateTimeField(auto_now=True, verbose_name='删除时间')
 
     class Meta:
         verbose_name = '文章'
@@ -120,25 +112,25 @@ class Article(models.Model):
         return self.title[:20]
 
     def get_absolute_url(self):
-        '''获取文章唯一路径'''
+        """获取文章唯一路径"""
         return reverse('blog:detail', kwargs={'slug': self.slug})
 
     def body_to_markdown(self):
-        '''添加markdown'''
+        """添加markdown"""
         return markdown.markdown(self.body, extensions=[
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',
         ])
 
     def update_views(self):
-        '''更新阅读量 '''
+        """更新阅读量"""
         self.views += 1
         self.save(update_fields=['views'])
 
     def get_pre(self):
-        '''获取上一页'''
+        """获取上一页"""
         return Article.objects.filter(id__lt=self.id).order_by('-id').first()
 
     def get_next(self):
-        '''获取下一页'''
+        """获取下一页"""
         return Article.objects.filter(id__gt=self.id).order_by('id').first()
