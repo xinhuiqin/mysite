@@ -11,16 +11,16 @@
 <div class="banner">
     <div class="topnav">
         <ul>
-            <li><a href="">首页</a></li>
+            <li><a href="http://127.0.0.1:8000/">首页</a></li>
             <li><a href="">文章</a></li>
-            <li><a href="">登录</a></li>
-            <li><a href="">注册</a></li>
+            <li><a href="{% url 'account_login' %}">登录</a></li>
+            <li><a href="{% url 'account_signup' %}">注册</a></li>
         </ul>
     </div>
 </div>
 
-<div id="container">
-    {% block container %}
+<div id="content">
+    {% block content %}
     {% endblock %}
 </div>
 <div class="footer">

@@ -1,0 +1,78 @@
+#content {
+    height: 700px;
+    background: url(../../images/account/register_bg.jpg) center no-repeat;
+}
+
+#content-container {
+    width: 100%;
+    height: 700px;
+    padding: 1px;
+}
+
+#signup-main {
+    width: 460px;
+    height: 400px;
+    margin: 30px auto;
+    /*如果opacity和background分开写，则子div会继承父div的opcacity属性*/
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#signup-main h1 {
+    margin: auto;
+    text-align: center;
+    line-height: 51px;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+}
+
+/*设置label标签*/
+label {
+    display: block;
+    font-size: 16px;
+    color: #3c3c3c;
+    margin-bottom: 10px;
+}
+
+/*设置input标签*/
+input {
+    width: 300px;
+    line-height: 1.3;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+/*设置input击后边框的颜色*/
+input:focus {
+    border-color: #666;
+    outline: 0;
+}
+
+#signup-form {
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    font-weight: 700;
+}
+
+/*登录按钮*/
+#btn-register {
+    margin: 50px auto;
+    width: 300px;
+    height: 42px;
+    border: 0;
+    display: block;
+    overflow: hidden;
+    vertical-align: middle;
+    line-height: 42px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    background: #666666;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
