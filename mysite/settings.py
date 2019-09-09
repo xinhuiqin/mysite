@@ -208,12 +208,6 @@ SITE_KEYWORDS = os.getenv('Sweeneys_SITE_KEYWORDS', 'Sweeneys,Python,Django, Ngi
 
 # django-allauth设置用户注册的时候必须填写邮箱地址
 ACCOUNT_EMAIL_REQUIRED = True
-# django-allauth设置可以用用户名也可以用邮箱登陆
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-# django-allauth设置登录和注册成功后重定向的页面，默认是/accounts/profile/
-LOGIN_REDIRECT_URL = "/"
-# django-allauth设置直接退出，不用确认
-ACCOUNT_LOGOUT_ON_GET = True
 
 #  发送邮件设置
 EMAIL_HOST = 'smtp.qq.com'
@@ -232,9 +226,18 @@ none: 不强制验证email，不发送验证邮件，不验证邮箱使用用户
 """
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
+# django-allauth设置可以用用户名也可以用邮箱登陆
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     "django.contrib.auth.backends.ModelBackend",
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend"
 )
+
+# django-allauth设置登录和注册成功后重定向的页面，默认是/accounts/profile/
+LOGIN_REDIRECT_URL = "/"
+
+# django-allauth设置直接退出，不用确认
+ACCOUNT_LOGOUT_ON_GET = True
