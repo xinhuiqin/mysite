@@ -205,3 +205,11 @@ AUTH_USER_MODEL = 'user.USER'  # user是应用名，USER是模型名
 SITE_END_TITLE = os.getenv('Sweeneys_SITE_END_TITLE', 'Sweeneys')
 SITE_DESCRIPTION = os.getenv('Sweeneys_SITE_DESCRIPTION', 'Sweeneys的官方网站')
 SITE_KEYWORDS = os.getenv('Sweeneys_SITE_KEYWORDS', 'Sweeneys,Python,Django, Nginx, Gunicorn, Supervisor, uWSGI, WSGI')
+
+# django-allauth设置用户注册的时候必须填写邮箱地址
+ACCOUNT_EMAIL_REQUIRED = True
+# django-allauth设置登录和注册成功后重定向的页面，默认是/accounts/profile/
+LOGIN_REDIRECT_URL = "/"
+# django-allauth设置直接退出，不用确认
+ACCOUNT_LOGOUT_ON_GET = True
+

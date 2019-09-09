@@ -10,15 +10,15 @@
     padding: 1px;
 }
 
-#login-main {
+#signup-main {
     width: 460px;
     height: 400px;
-    margin: 150px auto;
+    margin: 30px auto;
     /*如果opacity和background分开写，则子div会继承父div的opcacity属性*/
     background: rgba(255, 255, 255, 0.8);
 }
 
-#login-main h1 {
+#signup-main h1 {
     margin: auto;
     text-align: center;
     line-height: 51px;
@@ -51,7 +51,7 @@ input:focus {
     outline: 0;
 }
 
-#login-form {
+#signup-form {
     margin: auto;
     width: 300px;
     height: 300px;
@@ -59,7 +59,7 @@ input:focus {
 }
 
 /*登录按钮*/
-#btn-login {
+#btn-register {
     margin: 50px auto;
     width: 300px;
     height: 42px;
@@ -76,6 +76,6 @@ input:focus {
     cursor: pointer;
 }
 /*错误提示设置*/
-#login-form ul {
+#signup-form ul {
     list-style: none;
 }
