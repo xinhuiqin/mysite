@@ -79,3 +79,6 @@ input:focus {
 #signup-form ul {
     list-style: none;
 }
+.errorlist li {
+    color: red;
+}
