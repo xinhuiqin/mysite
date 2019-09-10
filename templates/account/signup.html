@@ -9,11 +9,7 @@
     {#    遮罩层#}
     <div id="content-container">
         <div id="signup-main">
-            <h1>注册账号{{ username }}
-                <div class="alert alert-error">
-                    <strong>{{ form.error}}</strong>
-                </div>
-            </h1>
+            <h1>注册 </h1>
             <div id="signup-form">
                 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                     {% csrf_token %}

@@ -1,7 +1,7 @@
 #content {
     height: 800px;
     background: url(../../images/account/register_bg.jpg) center no-repeat;
-    background-size:100% 100%;
+    background-size: 100% 100%;
 }
 
 #content-container {
@@ -13,7 +13,7 @@
 #login-main {
     width: 460px;
     height: 400px;
-    margin: 150px auto;
+    margin: 100px auto;
     /*如果opacity和background分开写，则子div会继承父div的opcacity属性*/
     background: rgba(255, 255, 255, 0.8);
 }
@@ -31,7 +31,7 @@ label {
     display: block;
     font-size: 16px;
     color: #3c3c3c;
-    margin-bottom: 10px;
+    margin: 10px auto;
 }
 
 /*设置input标签*/
@@ -75,10 +75,18 @@ input:focus {
     border-radius: 3px;
     cursor: pointer;
 }
+
 /*错误提示设置*/
 #login-form ul {
     list-style: none;
 }
+
 .errorlist li {
     color: red;
+}
+
+#id_remember {
+    height: 20px;
+    margin-left: -70px;
+    margin-top: -30px;
 }

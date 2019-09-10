@@ -238,7 +238,7 @@ none: 不强制验证email，不发送验证邮件，不验证邮箱使用用户
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 # 设置邮箱确认的有效时间
-ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 0.01
 
 #  django-allauth设置验证邮箱后自动登陆
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
