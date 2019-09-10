@@ -1,4 +1,4 @@
 {% load i18n %}
 {% autoescape off %}
-{% blocktrans %}请确认邮箱{% endblocktrans %}
+{% blocktrans %}请确认注册邮箱{% endblocktrans %}
 {% endautoescape %}
