@@ -209,7 +209,7 @@ SITE_KEYWORDS = os.getenv('Sweeneys_SITE_KEYWORDS', 'Sweeneys,Python,Django, Ngi
 # django-allauth设置用户注册的时候必须填写邮箱地址
 ACCOUNT_EMAIL_REQUIRED = True
 
-#  发送邮件设置
+#  Django发送邮件设置
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_HOST_USER = 'sweeneys@qq.com'
 EMAIL_HOST_PASSWORD = 'vfibizonnhwfbdih'
