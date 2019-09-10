@@ -10,8 +10,12 @@
 venv/
 
 # python
-migrations/*.py
-!migrations/__init__.py
+apps/user/migrations/*.py
+!apps/user/migrations/__init__.py
+apps/blog/migrations/*.py
+!apps/blog/migrations/__init__.py
+apps/home/migrations/*.py
+!apps/home/migrations/__init__.py
 __pycache__/
 *.py[cod]
 

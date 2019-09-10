@@ -216,7 +216,7 @@ EMAIL_HOST_PASSWORD = 'vfibizonnhwfbdih'
 EMAIL_PORT = 465
 EMAIL_TIMEOUT = 5
 EMAIL_USE_SSL = True
-DEFAULT_FROM_EMAIL = 'sweeneys@qq.com'
+DEFAULT_FROM_EMAIL = '覃新会个人官方网站'  # 发件人
 
 """
 Django-allauth注册邮箱验证.有三种值：
