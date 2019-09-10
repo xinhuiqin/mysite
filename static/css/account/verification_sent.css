@@ -1,0 +1,38 @@
+#content {
+    min-height: 800px;
+    background: url("../../images/account/email_bg.jpg") center no-repeat;
+    background-size: cover;
+    padding: 1px;
+}
+
+#card {
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 0 5px 1px rgba(7, 17, 27, .1);
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin: 15vh auto;
+    padding: 2% 1%;
+    background-color: #fff;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.title h1 {
+    font-weight: 400;
+}
+
+.line {
+    height: 1px;
+    background-color: #666;
+    margin: 1.5rem 0;
+}
+
+#card p {
+    text-align: left;
+    font-size: 20px;
+}

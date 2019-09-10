@@ -16,6 +16,11 @@ import sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# 初始化配置参数:用于正式环境
+config_file_path = os.path.join(BASE_DIR, "pro_settings.py")
+if os.path.exists(config_file_path):
+    import pro_settings as settings
+
 # add apps to the sys.path
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
@@ -50,7 +55,13 @@ INSTALLED_APPS = [
     'home',
     'blog',
 ]
+
+"""
+django-allauth之所以设置SIT_ID, 是因为用到django的“site”
+django site相关内容详见：https://docs.djangoproject.com/en/2.2/ref/contrib/sites/#s-enabling-the-sites-framework
+"""
 SITE_ID = 1
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -226,18 +237,26 @@ none: 不强制验证email，不发送验证邮件，不验证邮箱使用用户
 """
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
+# 设置邮箱确认的有效时间
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+
+#  django-allauth设置验证邮箱后自动登陆
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = '/accounts/login'
+
+# ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = '/accounts/login'
+
+# django-allauth设置登录成功后重定向的页面，默认是/accounts/profile/
+LOGIN_REDIRECT_URL = "/"
+
+# django-allauth设置直接退出，不用确认
+ACCOUNT_LOGOUT_ON_GET = True
+
 # django-allauth设置可以用用户名也可以用邮箱登陆
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     "django.contrib.auth.backends.ModelBackend",
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend"
 )
-
-# django-allauth设置登录和注册成功后重定向的页面，默认是/accounts/profile/
-LOGIN_REDIRECT_URL = "/"
-
-# django-allauth设置直接退出，不用确认
-ACCOUNT_LOGOUT_ON_GET = True

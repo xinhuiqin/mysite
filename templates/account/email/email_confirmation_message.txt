@@ -1,16 +1,7 @@
-{% load account %}
-{% user_display user as user_display %}
-{% load i18n %}
-{% autoescape off %}
-    {% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
-        Hello from {{ site_name }}!
+{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}你好，{{ user_display }}。感谢注册{{ site_name }}!
 
-        You're receiving this e-mail because user {{ user_display }} has given yours as an e-mail address to connect their account.
-
-        To confirm this is correct, go to {{ activate_url }}
-    {% endblocktrans %}
-    {% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
-       Thank you from {{ site_name }}!
-       {{ site_domain }}
-    {% endblocktrans %}
+为了确保邮箱的有效性，请点击下来的链接进行账号激活：
+{{ activate_url }}
+{% endblocktrans %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}{{ site_domain }}{% endblocktrans %}
 {% endautoescape %}

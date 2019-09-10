@@ -1,12 +1,15 @@
 {% extends "account/base.html" %}
-
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/account/verification_sent.css' %}">
+{% endblock %}
 {% load i18n %}
-
-{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
+{% block head_title %}邮箱验证{% endblock %}
 
 {% block content %}
-    <h1>{% trans "Verify Your E-mail Address" %}</h1>
-
-    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
-
+    <div id="card">
+       <h1 class="title">邮箱验证</h1>
+       <div class="line"></div>
+       <p>我们已经向您的邮箱发送了一封邮件，请登陆邮箱点击验证链接进行验证，验证通过即可登陆。</p>
+    </div>
 {% endblock %}
