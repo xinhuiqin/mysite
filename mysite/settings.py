@@ -260,3 +260,7 @@ AUTHENTICATION_BACKENDS = (
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend"
 )
+
+# 统一分页设置
+BASE_PAGINATE_BY = 10
+BASE_PAGINATE_ORPHANS = 5
