@@ -1,0 +1,14 @@
+{% load blog_tags %}
+{% for article in articles %}
+    <div>
+        <!-- 文章标题 -->
+        <p>{{ article.title }}</p>
+        <!-- 文章摘要 -->
+        {{ article.summary|truncatechars:130 }}
+        <p></p>
+        <!-- 作者 -->
+        <p>{{ article.author }}</p>
+    </div>
+{% empty %}
+    <div class="no-article"><p>暂时没有文章!</p></div>
+{% endfor %}
