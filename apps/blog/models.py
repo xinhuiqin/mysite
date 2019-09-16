@@ -10,7 +10,7 @@ STATUS = (
     (0, "禁用"),
 )
 # 文章图片默认地址
-IMG_LINK = '/static/images/blog/'
+IMG_LINK = '/static/images/blog/article-bg.png'
 
 
 class Category(models.Model):
@@ -95,7 +95,8 @@ class Article(models.Model):
     title = models.CharField(max_length=150, verbose_name='文章标题')
     summary = models.TextField(max_length=250, blank=True, default='', verbose_name='文章摘要')
     body = models.TextField(verbose_name='文章内容')
-    img_link = models.CharField(default=IMG_LINK, max_length=255, verbose_name='文章图片')
+    # ImageField依赖Pillow库
+    img_link = models.ImageField(default=IMG_LINK, upload_to='article/%Y%m%d%H%M%S', max_length=255, verbose_name='文章图片')
     views = models.IntegerField(default=0, verbose_name='文章阅读量')
     is_top = models.BooleanField(default=False, verbose_name='是否置顶')
     slug = models.SlugField(unique=True, verbose_name='唯一标识')
