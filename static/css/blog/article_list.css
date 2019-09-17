@@ -1,13 +1,8 @@
-a {
-
-}
-
 .article-item {
-    width: 340px;
-    height: 420px;
+    width: 100px;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
 }
 
-img {
-    vertical-align: middle;
-    border-style: none;
-}
