@@ -25,3 +25,12 @@ class IndexView(ListView):
         if sort == 'v':
             return '-views', '-update_at', '-id'
         return '-is_top', '-create_at'
+
+
+class CategoryView(ListView):
+    """
+
+    分类列表
+    """
+    model = Category
+    template_name = 'blog/category.html'

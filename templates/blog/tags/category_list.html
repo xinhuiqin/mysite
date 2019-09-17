@@ -1,0 +1,17 @@
+{% load blog_tags %}
+<div class="category">
+    <div class="category-header">
+        <span>文章分类</span>
+    </div>
+    <div class="category-body">
+        <ul class="">
+            {% for cate in categories %}
+                <li id="category-item">
+                    <a  href="{{ cate.get_absolute_url }}">{{ cate.name }}</a>
+                    <span>{{ cate.total_num }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+

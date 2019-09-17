@@ -1,0 +1,25 @@
+.category {
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    padding: 1rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.category-header span {
+    font-size: 18px;
+    /*bold约等于400， bolder 约等于700*/
+    font-weight: bolder;
+}
+
+.category-body {
+    font-size: 16px;
+}
+
+#category-item li {
+    text-align: match-parent;
+}

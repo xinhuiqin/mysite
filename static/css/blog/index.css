@@ -15,7 +15,6 @@
 .container-left {
     min-width: 900px;
     max-width: 1310px;
-    min-height: 1080px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
