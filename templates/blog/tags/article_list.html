@@ -1,25 +1,14 @@
 {% load blog_tags %}
 {% load static %}
-{% block css %}
-    <link rel="stylesheet" href="{% static 'css/blog/article_list.css' %}">
-{% endblock %}
 {% for article in articles %}
-    <div class="article-wrapper">
-        <div class="article-item">
-            <div class="article-img">
-                <a href="" target="_blank">
-{#                    <img src="{% static 'images/blog/article-bg.png' %}" alt="" class="">#}
-                </a>
-            </div>
-            <div class="article-info">
-                <h4 class="card-title"><a href="/blog/45/">Django中间件</a></h4>
-                <p style="font-size: 0.9rem" class="card-text font-weight-light">中间件是 Django
-                    用来处理请求和响应的钩子框架。它是一个轻量级的、底...</p>
-                <small class="article-text"><strong>博主</strong>&nbsp;&nbsp;&nbsp;</small>
-                <small class="article-text">2019年八月</small>
-                <small class="article-text">&nbsp;&nbsp;&nbsp;&nbsp;1条评论</small>
-                <small class="article-text">&nbsp;&nbsp;&nbsp;&nbsp;397次浏览</small>
-            </div>
+    <div class="article-item">
+        <div class="article-img">
+            <a target="_blank">
+                <img src="{% static 'images/blog/article-bg.png' %}" alt="" class="">
+            </a>
+        </div>
+        <div class="article-info">
+            <h4 class="card-title"><a>{{ article.title }}</a></h4>
         </div>
     </div>
 {% empty %}

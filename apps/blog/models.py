@@ -92,7 +92,7 @@ class Article(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='文章分类')
     tags = models.ManyToManyField(Tag, verbose_name='文章标签')
     keywords = models.ManyToManyField(Keyword, verbose_name='文章关键词')
-    title = models.CharField(max_length=150, verbose_name='文章标题')
+    title = models.CharField(max_length=50, verbose_name='文章标题')
     summary = models.TextField(max_length=250, blank=True, default='', verbose_name='文章摘要')
     body = models.TextField(verbose_name='文章内容')
     # ImageField依赖Pillow库

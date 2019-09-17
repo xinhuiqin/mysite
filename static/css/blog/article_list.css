@@ -1,8 +1,34 @@
 .article-item {
-    width: 100px;
-    height: 200px;
+    width: 400px;
+    height: 450px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
     background-color: #fff;
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .25rem;
 }
 
+/*为边框增加阴影效果*/
+.article-item:hover {
+    /*box-shadow: 1px 1px 1px 1px #ccc;*/
+    box-shadow: #ccc 0px 0px 5px;
+}
+
+/*设置图片*/
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+.card-title a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.article-info {
+    padding: 15px;
+}

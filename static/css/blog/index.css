@@ -1,0 +1,27 @@
+#content {
+    padding-top: 10px;
+    background-color: #f8f9fa;
+}
+.container {
+    display: flex;
+    /*主轴的排列方向，默认为row（主轴为水平方向，起点在左端）*/
+    flex-direction: row;
+    /*换行方式，wrap(换行，第一行在上方)*/
+    flex-wrap: wrap;
+    /*子元素在主轴上的对齐方式：center(居中)*/
+    justify-content: center;
+}
+
+.container-left {
+    min-width: 900px;
+    max-width: 1310px;
+    min-height: 1080px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.container-right {
+    min-width: 300px;
+}
