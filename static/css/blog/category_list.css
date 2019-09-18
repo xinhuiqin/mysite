@@ -32,3 +32,6 @@ ul {
 .category-item span{
     float: right;
 }
+.category-item a{
+    text-decoration: none;
+}
