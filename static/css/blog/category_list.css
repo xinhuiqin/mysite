@@ -3,11 +3,17 @@
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .25rem;
-    padding: 1rem;
 }
 
 ul {
     list-style-type: none;
+}
+
+/*文章分类*/
+.category-header {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0, 0, 0, .03);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
 .category-header span {
@@ -20,6 +26,9 @@ ul {
     font-size: 16px;
 }
 
-#category-item li {
-    text-align: match-parent;
+.category-item {
+    padding: .75rem 1.25rem;
+}
+.category-item span{
+    float: right;
 }

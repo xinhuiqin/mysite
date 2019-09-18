@@ -6,7 +6,7 @@
     <div class="category-body">
         <ul class="">
             {% for cate in categories %}
-                <li id="category-item">
+                <li class="category-item">
                     <a  href="{{ cate.get_absolute_url }}">{{ cate.name }}</a>
                     <span>{{ cate.total_num }}</span>
                 </li>
