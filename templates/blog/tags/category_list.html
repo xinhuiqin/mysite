@@ -4,11 +4,13 @@
         <span>文章分类</span>
     </div>
     <div class="category-body">
-        <ul class="">
+        <ul>
             {% for cate in categories %}
                 <li class="category-item">
-                    <a  href="{{ cate.get_absolute_url }}">{{ cate.name }}</a>
-                    <span>{{ cate.total_num }}</span>
+                    <a href="{{ cate.get_absolute_url }}">
+                        {{ cate.name }}
+                        <span>{{ cate.total_num }}</span>
+                    </a>
                 </li>
             {% endfor %}
         </ul>

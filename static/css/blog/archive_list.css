@@ -1,4 +1,5 @@
-.category {
+.archive {
+    margin-top: 50px;
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
@@ -10,37 +11,36 @@ ul {
 }
 
 /*文章分类*/
-.category-header {
+.archive-header {
     padding: .75rem 1.25rem;
     background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
-.category-header span {
+.archive-header span {
     font-size: 18px;
     /*bold约等于400， bolder 约等于700*/
     font-weight: bolder;
 }
 
-.category-body {
+.archive-body {
     font-size: 16px;
 }
 
 /*li标签*/
-.category-item {
+.archive-item {
     padding: .75rem 1.25rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border: 1px solid rgba(0,0,0,0.125);
 }
 
-.category-item:hover {
+.archive-item:hover {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.category-item span {
+.archive-item span {
     float: right;
 }
 
-.category-item a {
+.archive-item a {
     color: #333333;
-    /*cursor：光标*/
-    cursor: pointer;
 }
