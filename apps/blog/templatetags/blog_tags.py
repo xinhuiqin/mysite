@@ -10,7 +10,7 @@ register = template.Library()
 def load_article_summary(articles):
     """
 
-    文章列表模板
+    文章列表标签模板
     """
     return {'articles': articles}
 
@@ -19,7 +19,7 @@ def load_article_summary(articles):
 def get_category_list():
     """
 
-    分类目录模板:
+    分类目录标签模板:
     1.统计各分类下文章总数：Count()，接受的参数是需要计数的模型名称。
     """
     categories = Category.objects.annotate(total_num=Count('article')).filter(total_num__gt=0)
@@ -31,7 +31,7 @@ def get_category_list():
 def get_archive_list():
     """
 
-    归档目录模板
+    归档目录标签模板
     1.按月度进行归档(dates())
     """
     date_list = Article.objects.dates('create_at', 'month', order='DESC')
@@ -47,3 +47,13 @@ def get_archive_num(year, month):
     """
     archive_num = Article.objects.filter(create_at__year=year, create_at__month=month).count()
     return archive_num
+
+
+@register.inclusion_tag('blog/tags/page.html', takes_context=True)
+def load_pages(context):
+    """
+
+    分页标签模板
+    1.需要访问当前上下文，设置takes_context=True,同时方法第一个参数必须是context
+    """
+    return context

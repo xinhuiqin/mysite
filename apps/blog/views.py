@@ -17,7 +17,7 @@ class IndexView(ListView):
     context_object_name = 'articles'
     # 设置分页，并指定每页显示的数量
     paginate_by = getattr(settings, 'BASE_PAGINATE_BY', None)
-    paginate_orphans = getattr(settings, 'BASE_PAGINATE_ORPHANS', 0)
+    # paginate_orphans = getattr(settings, 'BASE_PAGINATE_ORPHANS', 0)
 
     # 设置排序方式
     def get_ordering(self):
