@@ -113,7 +113,11 @@ class Article(models.Model):
         return self.title[:20]
 
     def get_absolute_url(self):
-        """获取文章唯一路径"""
+        """
+        获取文章唯一路径
+        1.blog:detail:blog应用下name为detail的函数
+        2.kwargs={'slug': self.slug})：slug的值传给pa
+        """
         return reverse('blog:detail', kwargs={'slug': self.slug})
 
     def body_to_markdown(self):

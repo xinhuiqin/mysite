@@ -1,12 +1,14 @@
 # -*- coding:utf-8 -*-
 from django.shortcuts import render
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.conf import settings
 from .models import Article, Category, Tag
 
 
 class IndexView(ListView):
     """
+
     文章列表
     """
     # 设置使用的模型
@@ -17,6 +19,7 @@ class IndexView(ListView):
     context_object_name = 'articles'
     # 设置分页，并指定每页显示的数量
     paginate_by = getattr(settings, 'BASE_PAGINATE_BY', None)
+
     # paginate_orphans = getattr(settings, 'BASE_PAGINATE_ORPHANS', 0)
 
     # 设置排序方式
@@ -34,3 +37,20 @@ class CategoryView(ListView):
     """
     model = Category
     template_name = 'blog/category.html'
+
+
+class DetailView(DetailView):
+    """
+
+    详情页
+    """
+    model = Article
+    template_name = 'blog/detail.html'
+    context_object_name = 'article'
+
+    #  重写get_object()方法
+    def get_object(self):
+        obj = super(DetailView, self).get_object()
+
+
+
