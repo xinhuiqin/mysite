@@ -1,0 +1,19 @@
+#content-container {
+    overflow: hidden;
+    min-width: 1000px;
+    padding-left: 100px;
+}
+
+#article {
+    width: 900px;
+    min-height: 900px;
+    float: left;
+    border: 1px solid #cccccc;
+}
+
+#nav-bar {
+    width: 200px;
+    min-height: 900px;
+    float: left;
+    margin-left: 100px;
+}
