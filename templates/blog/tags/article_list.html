@@ -5,7 +5,7 @@
 {% for article in articles %}
     <div class="article-item">
         <div class="article-img">
-            <a target="_blank">
+            <a href="{{ article.get_absolute_url }}" target="_blank">
                 <img src="{% static 'images/blog/article-bg.png' %}" alt="" class="">
             </a>
         </div>

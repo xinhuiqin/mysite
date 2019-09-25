@@ -50,7 +50,9 @@ class DetailView(DetailView):
 
     #  重写get_object()方法
     def get_object(self):
+        # 继承父类的get_object()方法
         obj = super(DetailView, self).get_object()
+        return obj
 
 
 

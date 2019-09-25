@@ -1,4 +1,8 @@
 {% load blog_tags %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/blog/category_list.css' %}">
+{% endblock %}
 <div class="category">
     <div class="category-header">
         <span>文章分类</span>

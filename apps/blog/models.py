@@ -33,6 +33,10 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
+        """
+
+        获取文章绝对路径。使用reverse()时需要views.py配合。
+        """
         return reverse('blog:category', kwargs={'slug': self.slug})
 
     def get_article_list(self):
@@ -116,7 +120,7 @@ class Article(models.Model):
         """
         获取文章唯一路径
         1.blog:detail:blog应用下name为detail的函数
-        2.kwargs={'slug': self.slug})：slug的值传给pa
+        2.kwargs={'slug': self.slug})：slug的值传给path中名为slug的变量。
         """
         return reverse('blog:detail', kwargs={'slug': self.slug})
 

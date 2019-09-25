@@ -3,6 +3,7 @@
     background-color: #f8f9fa;
 }
 .container {
+    min-height: 768px;
     display: flex;
     /*主轴的排列方向，默认为row（主轴为水平方向，起点在左端）*/
     flex-direction: row;

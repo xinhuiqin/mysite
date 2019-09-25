@@ -1,5 +1,18 @@
 {% extends 'home/base.html' %}
 {% load static %}
+{% load blog_tags %}
+{% block head_title %}详情{% endblock %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/blog/detail.css' %}">
+{% endblock %}
+{% block content %}
+    <div id="article">
+        <div class="article-header"></div>
+        <div class="article-content"></div>
+        <div class="article-footer"></div>
+    </div>
+    <div id="nav-bar">
+        {% get_category_list %}
+        {% get_archive_list %}
+    </div>
 {% endblock %}
