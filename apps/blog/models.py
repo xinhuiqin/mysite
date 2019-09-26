@@ -8,6 +8,7 @@ import markdown
 STATUS = (
     (1, "启用"),
     (0, "禁用"),
+    (0, "禁用"),
 )
 # 文章图片默认地址
 IMG_LINK = '/static/images/blog/article-bg.png'

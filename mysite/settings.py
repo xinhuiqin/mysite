@@ -110,6 +110,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '123456',
         'NAME': 'mysite',
+        'OPTIONS': {'charset': 'utf8mb4'},
     }
 
 }
