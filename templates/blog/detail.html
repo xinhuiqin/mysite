@@ -12,7 +12,9 @@
                 <h1>{{ article.title }}</h1>
             </div>
             <div class="article-content">
-                 {{ article.body|safe }}
+                {% autoescape on %}
+                    {{ article.body|safe|linebreaks }}
+                {% endautoescape %}
             </div>
             <div class="article-footer"></div>
             <div style="clear:both;"></div>
