@@ -1,12 +1,20 @@
+.article-wrapper {
+    /*
+     width: 400px*3=1200px; height:450px*3=1350px
+    */
+    width: 1260px;
+    height: 1350px;
+}
+
 .article-item {
+    /*每个item宽度*/
     width: 400px;
-    height: 450px;
+    height: 410px;
     margin-right: 15px;
-    margin-left: 15px;
-    margin-bottom: 15px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .25rem;
+    float: left;
 }
 
 /*为边框增加阴影效果*/
@@ -18,17 +26,38 @@
 /*设置图片*/
 img {
     width: 100%;
-    height: auto;
+    height: 250px;
 }
 
-
-.card-title a {
+/*文字标题*/
+.article-title a {
     display: block;
     color: #333;
-    text-decoration: none;
     font-size: 18px;
+    height: 48px;
+    text-align: left;
+}
+
+.article-title a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.article-summary {
+    color: #333;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    line-height: 1.5;
+    word-break: break-word;
+    font-size: 1.1em;
 }
 
 .article-info {
     padding: 15px;
+}
+
+.article-text {
+    margin-right: 30px;
+    font-size: 15px;
+    font-weight: 400;
 }

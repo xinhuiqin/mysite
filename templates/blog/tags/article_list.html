@@ -1,18 +1,22 @@
 {% load static %}
-{#<div class="article-wrapper">#}
-{#  #}
-{#</div>#}
-{% for article in articles %}
-    <div class="article-item">
-        <div class="article-img">
-            <a href="{{ article.get_absolute_url }}" target="_blank">
-                <img src="{% static 'images/blog/article-bg.png' %}" alt="" class="">
-            </a>
+<link rel="stylesheet" href="{% static 'css/blog/article_list.css' %}">
+<div class="article-wrapper">
+    {% for article in articles %}
+        <div class="article-item">
+            <div class="article-img">
+                <a href="{{ article.get_absolute_url }}" target="_blank">
+                    <img src="{% static 'images/blog/article-bg.png' %}" alt="" class="">
+                </a>
+            </div>
+            <div class="article-info">
+                <h4 class="article-title"><a title="{{ article.title }}">{{ article.title }}</a></h4>
+                <p class="article-summary">{{ article.body|truncatechars:64 }}</p>
+                <small class="article-text"><strong>{{ article.author }}</strong></small>
+                <small class="article-text">{{ article.create_at|date:"Y-m-d" }}</small>
+                <small class="article-text"><a href="">评论</a></small>
+            </div>
         </div>
-        <div class="article-info">
-            <h4 class="card-title"><a>{{ article.title }}</a></h4>
-        </div>
-    </div>
-{% empty %}
-    <div class="no-article"><p>暂时没有文章!</p></div>
-{% endfor %}
+    {% empty %}
+        <div class="no-article"><p>暂时没有文章!</p></div>
+    {% endfor %}
+</div>
