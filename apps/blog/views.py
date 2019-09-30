@@ -3,7 +3,9 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.conf import settings
-from .models import Article, Category, Tag
+from django.utils.text import slugify
+import markdown
+from .models import Article, Category
 
 
 class IndexView(ListView):
@@ -168,7 +170,14 @@ class DetailView(DetailView):
     context_object_name = 'article'
 
     #  重写get_object()方法
-    def get_object(self):
-        # 继承父类的get_object()方法
-        obj = super(DetailView, self).get_object()
+    def get_object(self, queryset=None):
+        # 覆写 get_object 方法的目的是因为需要对 post 的 body 值进行渲染
+        obj = super(DetailView, self).get_object(queryset=None)
+        obj.body = markdown.markdown(obj.body,
+                                     extensions=[
+                                         'markdown.extensions.extra',
+                                         'markdown.extensions.codehilite',
+                                         'markdown.extensions.toc',
+                                     ])
+        # obj.body = md.convert(obj.body)
         return obj

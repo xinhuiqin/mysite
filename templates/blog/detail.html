@@ -4,6 +4,7 @@
 {% block head_title %}详情{% endblock %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/blog/detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common/highlights/vs.css' %}">
 {% endblock %}
 {% block content %}
     <div id="content-container">
@@ -12,8 +13,8 @@
                 <h1>{{ article.title }}</h1>
             </div>
             <div class="article-content">
-                {% autoescape on %}
-                    {{ article.body|safe|linebreaks }}
+                {% autoescape off %}
+                    {{ article.body|safe|linebreaksbr}}
                 {% endautoescape %}
             </div>
             <div class="article-footer"></div>

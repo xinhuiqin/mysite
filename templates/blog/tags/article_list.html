@@ -9,8 +9,12 @@
                 </a>
             </div>
             <div class="article-info">
-                <h4 class="article-title"><a title="{{ article.title }}">{{ article.title }}</a></h4>
-                <p class="article-summary">{{ article.body|truncatechars:64 }}</p>
+                <h4 class="article-title">
+                    <a href="{{ article.get_absolute_url }}" target="_blank" title="{{ article.title }}">
+                        {{ article.title }}
+                    </a>
+                </h4>
+                <p class="article-summary">{{ article.body|truncatechars:64|safe }}</p>
                 <small class="article-text"><strong>{{ article.author }}</strong></small>
                 <small class="article-text">{{ article.create_at|date:"Y-m-d" }}</small>
                 <small class="article-text"><a href="">评论</a></small>
