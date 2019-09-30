@@ -12,12 +12,12 @@
             <!-- 文章列表 -->
             {% load_article_summary articles %}
             <!-- 分页 -->
-{#            {% if is_paginated %}{% load_pages %}{% endif %}#}
+            {% if is_paginated %}{% load_pages %}{% endif %}
         </div>
         <!-- 分类、归档 -->
         <div class="container-right">
-{#            {% get_category_list %}#}
-{#            {% get_archive_list %}#}
+            {% get_category_list %}
+            {% get_archive_list %}
         </div>
 
     </div>

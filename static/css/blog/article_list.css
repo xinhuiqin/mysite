@@ -2,8 +2,8 @@
     /*
      width: 400px*3=1200px; height:450px*3=1350px
     */
-    width: 1260px;
-    height: 1350px;
+    min-width: 1260px;
+    min-height: 500px;
 }
 
 .article-item {

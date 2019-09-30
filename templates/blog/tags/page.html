@@ -1,4 +1,5 @@
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/blog/page.css' %}">
 <div class="page-wrapper">
     {% if page_obj.has_previous %}
         <a class="" href="?page={{ page_obj.previous_page_number }}">上一页</a>

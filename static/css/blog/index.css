@@ -1,18 +1,17 @@
 #content {
-    width: 1300px;
-    min-height: 800px;
+    width: 1460px;
+    min-height: 1500px;
     margin: 50px auto;
 }
 
 .container-left {
-    /*min-width: 1000px;*/
-    width: 1200px;
+    width: 1237px;
     height: 500px;
     float: left;
+    margin-right: 20px;
 }
 
 .container-right {
-    /*min-width: 200px;*/
     width: 200px;
     height: 600px;
     float: left;
