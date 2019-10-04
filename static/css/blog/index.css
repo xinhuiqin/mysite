@@ -1,7 +1,9 @@
 #content {
     width: 1460px;
     min-height: 1500px;
-    margin: 50px auto;
+    /*margin-top:因为导航栏设置了fixed属性，所以margin-top设置等于导航栏的高度*/
+    margin-top: 80px;
+    padding-top: 100px;
 }
 
 .container-left {

@@ -6,17 +6,17 @@
             <ul>
                 {% if is_paginated %}
                     {% if page_obj.has_previous %}
-                        <a href="?page={{ page_obj.previous_page_number }}">
+                        <a class="page-able" href="?page={{ page_obj.previous_page_number }}">
                             <li>上一页</li>
                         </a>
                     {% else %}
-                        <a class="">
+                        <a class="page-disable">
                             <li>上一页</li>
                         </a>
                     {% endif %}
                     <!--如果页列表不包含第一页那么则始终显示第一页-->
                     {% if first %}
-                        <a href="?page=1">
+                        <a class="page-able" href="?page=1">
                             <li>1</li>
                         </a>
                     {% endif %}
@@ -25,20 +25,20 @@
                             <li>...</li>
                         {% endif %}
                         {% for i in left %}
-                            <a href="?page={{ i }}">
+                            <a class="page-able" href="?page={{ i }}">
                                 <li>{{ i }}</li>
                             </a>
                         {% endfor %}
                     {% endif %}
                     <!--当前页-->
-                    <a href="?page={{ page_obj.number }}">
+                    <a class="page-able" href="?page={{ page_obj.number }}">
                         <li style="background: #555555; color: #ffffff">{{ page_obj.number }}</li>
                     </a>
 
                     <!--当前页左侧连续页号码-->
                     {% if right %}
                         {% for r in right %}
-                            <a href="?page={{ r }}">
+                            <a class="page-able" href="?page={{ r }}">
                                 <li>{{ r }}</li>
                             </a>
                         {% endfor %}
@@ -49,18 +49,18 @@
 
                     <!--是否显示最后一页-->
                     {% if last %}
-                        <a href="?page={{ paginator.num_pages }}">
+                        <a class="page-able" href="?page={{ paginator.num_pages }}">
                             <li>{{ paginator.num_pages }}</li>
                         </a>
                     {% endif %}
 
                     <!-- 如果当前页还有下一页，显示一个下一页的按钮 -->
                     {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}">
+                        <a class="page-able" href="?page={{ page_obj.next_page_number }}">
                             <li>下一页</li>
                         </a>
                     {% else %}
-                        <a class="">
+                        <a class="page-disable">
                             <li>下一页</li>
                         </a>
                     {% endif %}

@@ -17,7 +17,7 @@
                 <p class="article-summary">{{ article.body|truncatechars:64|safe }}</p>
                 <small class="article-text"><strong>{{ article.author }}</strong></small>
                 <small class="article-text">{{ article.create_at|date:"Y-m-d" }}</small>
-                <small class="article-text"><a href="">评论</a></small>
+                <small class="article-text"><a id="comment" href="">评论</a></small>
             </div>
         </div>
     {% empty %}

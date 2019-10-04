@@ -61,3 +61,7 @@ img {
     font-size: 15px;
     font-weight: 400;
 }
+/*评论点击时显示紫色*/
+#comment:active{
+  color: purple;
+}

@@ -15,13 +15,23 @@
     border: 1px solid #000;
 }
 
-.page-wrapper li:hover {
+.page-able li:hover {
     cursor: pointer;
     color: #9e8458;
     border: 1px solid #9e8458;
 }
 
-.page-wrapper a {
+.page-able {
     text-decoration: none;
     color: #333333;
+}
+
+.page-disable li {
+    color: #ccc;
+    border: 1px solid #ccc;
+}
+
+.page-disable li:hover {
+    color: #ccc;
+    border: 1px solid #ccc;
 }
