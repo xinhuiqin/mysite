@@ -51,9 +51,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'user',
-    'home',
-    'blog',
+    'user.apps.UserConfig',
+    'home.apps.HomeConfig',
+    'blog.apps.BlogConfig',
+    'comment.apps.CommentConfig',
 ]
 
 """
