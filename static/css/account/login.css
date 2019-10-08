@@ -1,5 +1,6 @@
 #content {
-    height: 800px;
+    margin-top: 80px;
+    min-height: 980px;
     background: url(../../images/account/register_bg.jpg) center no-repeat;
     background-size: 100% 100%;
 }
