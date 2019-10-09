@@ -35,4 +35,4 @@ class ArticleComment(Comment):
     class Meta:
         verbose_name = '文章评论'
         verbose_name_plural = verbose_name
-        ordering = ['create_at']
+        ordering = ('-id',)
