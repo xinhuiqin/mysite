@@ -4,6 +4,15 @@ from django import template
 register = template.Library()
 
 
+@register.inclusion_tag('comment/tags/comment_form.html', takes_context=True)
+def get_comment_form(context):
+    """
+
+     评论表单模板.
+    """
+    return context
+
+
 @register.inclusion_tag('comment/tags/comment_list.html', takes_context=True)
 def get_comment_list(context, article):
     """

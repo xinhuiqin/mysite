@@ -1,0 +1,13 @@
+<div id="comment">
+    <hr/>
+    <h2>发表评论</h2>
+    <textarea id="cmt_content" rows="5" cols="100"></textarea>
+    <div>
+        {% if  user.is_authenticated %}
+            <button type="button">评论</button>
+        {% else %}
+            <button><a href="{% url 'account_login' %}">评论</a></button>
+        {% endif %}
+    </div>
+    <hr/>
+</div>

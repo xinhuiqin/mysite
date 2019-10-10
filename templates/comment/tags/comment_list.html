@@ -1,12 +1,15 @@
-<h3>评论列表</h3>
-<ul class="comment-list">
-    {% for comment in comment_list %}
-        <li class="comment-item">
-            <span class="nickname">{{ comment.user}}</span>
-            <time datetime="{{ comment.create_at }}">{{ comment.create_at }}</time>
-            <div class="content">{{ comment.content|linebreaks }}</div>
-        </li>
-    {% empty %}
-        <span>暂无评论</span>
-    {% endfor %}
-</ul>
+<script></script>
+<div class="comment-list-panel">
+    <h2>评论列表</h2>
+    <ul class="comment-list">
+        {% for comment in comment_list %}
+            <li class="comment-item">
+                <span class="nickname">{{ comment.user }}</span>
+                <time datetime="{{ comment.create_at }}">{{ comment.create_at }}</time>
+                <div class="content">{{ comment.content|linebreaks }}</div>
+            </li>
+        {% empty %}
+            <span>暂无评论</span>
+        {% endfor %}
+    </ul>
+</div>

@@ -5,6 +5,7 @@
     <link href="{% static 'css/home/base.css' %}" rel="stylesheet">
     {% block css %}{% endblock %}
     {% block js %}{% endblock %}
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
     {% block extra_head %}{% endblock %}
 </head>
 <body>
@@ -38,7 +39,7 @@
         <li>
             <a href="http://beian.miit.gov.cn" target="_blank">粤ICP备19001222号-1</a>
             <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030302001394" target="_blank">
-                <img src="{% static 'images/home/beian.png'%}" alt="" style="width: 20px;height: 20px;">
+                <img src="{% static 'images/home/beian.png' %}" alt="" style="width: 20px;height: 20px;">
                 粤公网安备44030302001394号
             </a>
         </li>

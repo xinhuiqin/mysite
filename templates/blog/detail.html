@@ -18,15 +18,13 @@
                     {{ article.body|safe|linebreaksbr }}
                 {% endautoescape %}
             </div>
-            <hr/>
-            <div id="comment"></div>
-            <div class="comment-list-panel">{% get_comment_list article %}</div>
+            {% get_comment_form %}
+            {% get_comment_list article %}
         </div>
-        <div style="clear:both;"></div>
+        <div id="nav-bar">
+            {% get_category_list %}
+            {% get_archive_list %}
+        </div>
     </div>
-    <div id="nav-bar">
-        {% get_category_list %}
-        {% get_archive_list %}
-    </div>
-    </div>
+
 {% endblock %}
