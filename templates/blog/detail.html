@@ -1,6 +1,7 @@
 {% extends 'home/base.html' %}
 {% load static %}
 {% load blog_tags %}
+{% load comment_tags %}
 {% block head_title %}详情{% endblock %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/blog/detail.css' %}">
@@ -14,16 +15,18 @@
             </div>
             <div class="article-content">
                 {% autoescape off %}
-                    {{ article.body|safe|linebreaksbr}}
+                    {{ article.body|safe|linebreaksbr }}
                 {% endautoescape %}
             </div>
             <hr/>
             <div id="comment"></div>
-            <div style="clear:both;"></div>
+            <div class="comment-list-panel">{% get_comment_list article %}</div>
         </div>
-        <div id="nav-bar">
-            {% get_category_list %}
-            {% get_archive_list %}
-        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div id="nav-bar">
+        {% get_category_list %}
+        {% get_archive_list %}
+    </div>
     </div>
 {% endblock %}
