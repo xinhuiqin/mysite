@@ -23,5 +23,5 @@ urlpatterns = [
     # path('', include('home.urls')),
     path('accounts/', include('allauth.urls')),
     path('', include('blog.urls', namespace='blog')),
-    # path('comment/', include('comment.urls', namespace='comment')),
+    path('comment/', include('comment.urls', namespace='comment')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

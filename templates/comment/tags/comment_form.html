@@ -1,13 +1,50 @@
+{% load static %}
 <div id="comment">
     <hr/>
     <h2>发表评论</h2>
-    <textarea id="cmt_content" rows="5" cols="100"></textarea>
+    <textarea id="comment_content" rows="5" cols="100"></textarea>
     <div>
         {% if  user.is_authenticated %}
-            <button type="button">评论</button>
+            <button type="button" id="cmt-btn" data-csrf-token="{{ crsf_token }}"
+                    data-article-id="{{ article.id }}" data-ajax-url="{% url 'comment:add_comment' %}">
+                评论
+            </button>
         {% else %}
-            <button><a href="{% url 'account_login' %}">评论</a></button>
+            {#            <button ><a href="{% url 'account_login' %}">评论</a></button>#}
+            <button type="button" id="cmt-btn" data-csrf="{{ crsf }}"
+                    data-article-id="{{ article.id }}" data-ajax-url="{% url 'comment:add_comment' %}">
+                评论
+            </button>
         {% endif %}
     </div>
     <hr/>
 </div>
+{#<script src="{% static 'js/comment/comment.js' %}"></script>#}
+<script>
+    $("#cmt-btn").click(function () {
+        /*文章id*/
+        var article_id = $(this).data('article-id');
+        /*评论内容*/
+        var content = $('#comment_content').val();
+        /*提交的url*/
+        var url = $(this).data('ajax-url');
+        alert(url)
+        if (content.length == 0) {
+            return false;
+        }
+        ajax({
+            type: "POST",
+            url: url,
+            data: {
+                "article_id": article_id,
+            },
+            dataType: "json",
+            success: function (data) {
+                window.location.reload();
+            },
+            error: function (data) {
+                alert(data.msg);
+            }
+        });
+    });
+</script>

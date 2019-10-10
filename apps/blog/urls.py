@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-from django.urls import path, include
+from django.urls import path
 from .views import IndexView, CategoryView, DetailView
 
 app_name = 'blog'
