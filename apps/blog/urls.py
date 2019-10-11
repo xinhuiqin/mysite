@@ -10,5 +10,5 @@ urlpatterns = [
     # 博客详情页,将接收到的slug转为slug类型
     path('detail/<slug:slug>', DetailView.as_view(), name='detail'),
     # 博客分类页
-    path('detail/<slug:slug>', CategoryView.as_view(), name='category'),
+    path('category/<slug:slug>', CategoryView.as_view(), name='category'),
 ]
