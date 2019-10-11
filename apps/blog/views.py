@@ -187,6 +187,9 @@ class CategoryView(ListView):
         qs = super(CategoryView, self).get_queryset()
         return qs.filter(category=self.category)
 
+class ArchivesView(ListView):
+    model = Article
+
 
 class DetailView(DetailView):
     """
@@ -209,3 +212,5 @@ class DetailView(DetailView):
                                      ])
         # obj.body = md.convert(obj.body)
         return obj
+
+
