@@ -13,8 +13,8 @@ class Comment(models.Model):
     parent = models.ForeignKey('self', blank=True, null=True, related_name='%(class)s_child_comments',
                                on_delete=models.CASCADE, verbose_name='父评论')
     reply_to = models.ForeignKey('self', blank=True, null=True, related_name='%(class)s_reply_comments',
-                                 on_delete=models.CASCADE, verbose_name='回复')
-    create_at = models.DateTimeField(verbose_name='评论时间')
+                                 on_delete=models.CASCADE, verbose_name='被回复的评论')
+    create_at = models.DateTimeField(verbose_name='评论时间', auto_now_add=True)
 
     class Meta:
         # 设置abstract = True，表示只用于继承，不生成数据库表

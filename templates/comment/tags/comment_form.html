@@ -1,5 +1,6 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/comment/comment_form.css' %}">
+{% csrf_token %}
 <div id="comment">
     <hr/>
     <span id="cmt_form_title">发表评论</span>
@@ -21,12 +22,12 @@
         var article_id = $(this).data('article-id');
         var content = $('#comment_content').val();
         var url = $(this).data('ajax-url');
-        var csrf_token = $(this).data('csrf_token');
-        alert(csrf_token)
+        var csrf_token = "{{ csrf_token }}";
 
+        /*csrf_token的传递*/
         $.ajaxSetup({
-            data: {
-                'csrfmiddlewaretoken': csrf_token
+            beforeSend: function (xhr, settings) {
+                xhr.setRequestHeader("X-CSRFToken", csrf_token);
             }
         });
         $.ajax({
@@ -38,13 +39,10 @@
             },
             dataType: 'json',
             success: function (data) {
-                {#simplemde.value('')#}
-                {#sessionStorage.removeItem('rep_id');#}
-                {#sessionStorage.setItem('new_point', ret.new_point);#}
                 window.location.reload();
             },
             error: function (data) {
-                alert(data.msg);
+                console.log(data.msg)
             }
         });
     })
