@@ -1,0 +1,12 @@
+@charset "UTF-8";
+#cmt_list_hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+}
+
+#cmt_list_title {
+    font-size: 24px;
+    font-weight: bold;
+}

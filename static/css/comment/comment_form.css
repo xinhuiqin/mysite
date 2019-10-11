@@ -1,0 +1,39 @@
+@charset "UTF-8";
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+#cmt_form_title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/*评论框*/
+#comment_content {
+    width: 800px;
+    outline: none;
+    border: solid 1px #333333;
+    resize: none;
+    border-radius: 5px;
+    line-height: normal;
+    margin: 10px 0px;
+    font-size: 16px;
+}
+
+/*评论按钮*/
+#btn_wrapper {
+    height: 30px;
+}
+#cmt-btn {
+    float: right;
+    color: #fff;
+    background-color: #337ab7;
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
