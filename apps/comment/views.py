@@ -4,9 +4,8 @@ from django.shortcuts import render
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
-from django.http import JsonResponse
+from django.http import HttpResponse
 # 不能写成from apps.blog.models import Article
-from blog.models import Article
 from .models import ArticleComment
 
 user_model = settings.AUTH_USER_MODEL
@@ -15,9 +14,11 @@ user_model = settings.AUTH_USER_MODEL
 @login_required
 @require_POST
 def add_comment(request):
-    data = {
+    cmt = {}
+    ret = {
         'code': 1,
-        'msg': '评论成功'
+        'msg': '评论成功',
+        'cmt': cmt,
     }
     if request.is_ajax():
         data = request.POST
@@ -31,5 +32,8 @@ def add_comment(request):
         else:
             pass
         article_cmt.save()
+        cmt['user'] = article_cmt.user.username
+        cmt['create_at'] = article_cmt.create_at.strftime('%Y-%m-%d %H:%M:%S')
+        cmt['content'] = article_cmt.content
 
-    return JsonResponse(data)
+    return HttpResponse(json.dumps(ret))

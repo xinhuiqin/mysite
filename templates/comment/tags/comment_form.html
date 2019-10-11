@@ -24,6 +24,10 @@
         var url = $(this).data('ajax-url');
         var csrf_token = "{{ csrf_token }}";
 
+        if (content.length == 0) {
+            return false;
+        }
+
         /*csrf_token的传递*/
         $.ajaxSetup({
             beforeSend: function (xhr, settings) {
@@ -39,10 +43,16 @@
             },
             dataType: 'json',
             success: function (data) {
-                window.location.reload();
+                var cmt = data.cmt;
+                var cmt_html = "<li class=\"comment-item\">" +
+                    "                <span class=\"nickname\">" + cmt.user + "</span>" +
+                    "                <time datetime=\"\">" + cmt.create_at + " </time>" +
+                "                <div class=\"content\"><p>" + cmt.content + "</p></div>" +
+                "            </li>";
+                $(".comment-list").prepend(cmt_html);
             },
             error: function (data) {
-                console.log(data.msg)
+                alert(data.msg)
             }
         });
     })
