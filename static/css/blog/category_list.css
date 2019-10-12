@@ -43,4 +43,6 @@ ul {
     color: #333333;
     /*cursor：光标*/
     cursor: pointer;
+    /*设置点击li标签的时候也能跳转*/
+    display: block;
 }

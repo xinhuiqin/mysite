@@ -12,5 +12,5 @@ urlpatterns = [
     # 博客分类页
     path('category/<slug:slug>', CategoryView.as_view(), name='category'),
     # 博客归档页
-    path('/archive/', ArchiveView.as_view(), name='archive'),
+    path('archive/<int:year>/<int:month>', ArchiveView.as_view(), name='archive'),
 ]

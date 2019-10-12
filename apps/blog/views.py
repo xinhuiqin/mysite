@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
+from django.shortcuts import get_list_or_404
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.conf import settings
@@ -192,6 +193,14 @@ class ArchiveView(ListView):
     model = Article
     template_name = 'blog/archive.html'
     context_object_name = 'articles'
+
+    def get_queryset(self):
+        """
+        根据年月过滤查询。
+        """
+        self.article = get_list_or_404(Article, create_at__year=self.kwargs['year'],
+                                       create_at__month=self.kwargs['month'])
+        return self.article
 
 
 class DetailView(DetailView):

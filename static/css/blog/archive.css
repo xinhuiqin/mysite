@@ -9,6 +9,7 @@
     max-width: 980px;
     margin: 0 auto;
     padding: 2em 1em;
+    position: relative;
 }
 
 /*竖线设置
@@ -17,15 +18,14 @@
 */
 #archives:before {
     position: absolute;
-    top: 8em;
+    top: 0em;
     bottom: 1em;
-    left: 178px;
+    left: 21px;
     height: auto;
     content: '';
     background-color: #42b983;
     width: 4px;
     z-index: -1;
-
 }
 
 .time-section {
@@ -52,3 +52,37 @@
     z-index: -1;
 }
 
+/*文章标题*/
+.archive-title {
+    color: black;
+    transition: all 0.3s ease;
+    font-size: 1.6em;
+}
+
+.archive-title:hover{
+  color: #42b983;
+  padding-left: 10px;
+}
+.archive-date {
+    color: black;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.section-list-item {
+    margin: 20px 0px 20px 10px;
+    position: relative;
+}
+
+/*实心圆设置*/
+.section-list-item:before {
+    position: absolute;
+    left: -34px;
+    top: 3px;
+    content: '';
+    background-color: #42b983;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: -1;
+}

@@ -6,7 +6,8 @@
 {% endblock %}
 {% block content %}
     <div class="archive-wrapper">
-        <main id="archives">
+       <div>
+            <main id="archives">
             {% regroup articles by create_at.year as  year_list %}
             {% for year_article in year_list %}
                 <section class="time-section">
@@ -16,8 +17,8 @@
                         {% for month_article in month_list %}
                             {% for item in  month_article.list %}
                                 <div class="section-list-item">
-                                    <a href="" class="article-list">{{ item.title }}</a>
-                                    <p>{{ item.create_at|date:"m-d" }}</p>
+                                    <a href="{{ item.get_absolute_url }}" class="archive-title">{{ item.title }}</a>
+                                    <p class="archive-date">{{ item.create_at|date:"m-d" }}</p>
                                 </div>
                             {% endfor %}
                         {% endfor %}
@@ -25,5 +26,6 @@
                 </section>
             {% endfor %}
         </main>
+       </div>
     </div>
 {% endblock %}
