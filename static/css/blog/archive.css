@@ -1,0 +1,54 @@
+@charset "UTF-8";
+.archive-wrapper {
+    margin-top: 80px;
+    min-height: 980px;
+}
+
+/*标题设置*/
+#archives {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 2em 1em;
+}
+
+/*竖线设置
+::before 创建一个伪元素，其将成为匹配选中的元素的第一个子元素。
+常通过 content 属性来为一个元素添加修饰性的内容。此元素默认为行内元素。
+*/
+#archives:before {
+    position: absolute;
+    top: 8em;
+    bottom: 1em;
+    left: 178px;
+    height: auto;
+    content: '';
+    background-color: #42b983;
+    width: 4px;
+    z-index: -1;
+
+}
+
+.time-section {
+    padding-left: 30px;
+    position: relative;
+}
+
+.time-section .section-year {
+    cursor: pointer;
+    font-size: 1.8em;
+    margin-left: 10px;
+}
+
+.time-section .section-year:before {
+    position: absolute;
+    left: 1px;
+    top: 5px;
+    content: '';
+    background-color: #fff;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #42b983;
+    border-radius: 50%;
+    z-index: -1;
+}
+

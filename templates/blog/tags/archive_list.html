@@ -11,7 +11,7 @@
         <ul>
             {% for date in date_list %}
                 <li class="archive-item">
-                    <a href="">
+                    <a href="{% url 'blog:archive' %}">
                         {{ date.year }} 年 {{ date.month }} 月
                         <span>{% get_archive_num date.year date.month %}篇</span>
                     </a>

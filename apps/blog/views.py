@@ -123,7 +123,7 @@ class IndexView(ListView):
     # 设置上下文对象名，前端模板调用
     context_object_name = 'articles'
     # 设置分页，并指定每页显示的数量
-    paginate_by = getattr(settings, 'BASE_PAGINATE_BY', None)
+    paginate_by = getattr(settings, 'BASE_PAGINATE_BY', 3)
 
     def get_context_data(self, *, object_list=None, **kwargs):
         """
@@ -187,8 +187,11 @@ class CategoryView(ListView):
         qs = super(CategoryView, self).get_queryset()
         return qs.filter(category=self.category)
 
-class ArchivesView(ListView):
+
+class ArchiveView(ListView):
     model = Article
+    template_name = 'blog/archive.html'
+    context_object_name = 'articles'
 
 
 class DetailView(DetailView):
@@ -212,5 +215,3 @@ class DetailView(DetailView):
                                      ])
         # obj.body = md.convert(obj.body)
         return obj
-
-
