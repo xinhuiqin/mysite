@@ -16,6 +16,8 @@ apps/blog/migrations/*.py
 !apps/blog/migrations/__init__.py
 apps/home/migrations/*.py
 !apps/home/migrations/__init__.py
+apps/comment/migrations/*.py
+!apps/comment/migrations/__init__.py
 __pycache__/
 *.py[cod]
 
