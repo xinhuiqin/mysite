@@ -1,67 +1,96 @@
-.article-wrapper {
-    /*
-     width: 400px*3=1200px; height:450px*3=1350px
-    */
-    min-width: 1260px;
-    min-height: 500px;
+/*左侧文章列表*/
+.article-wrapper{
+    margin-top: -40px;
+    margin-bottom: 40px;
+
+}
+.article-wrapper li{
+    margin-top: 40px;
+}
+.article-wrapper li:first-child{
+    margin-top: 40px;
 }
 
-.article-item {
-    /*每个item宽度*/
-    width: 400px;
-    height: 430px;
-    margin-right: 15px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem;
-    float: left;
+.list {
+    width: 800px;
+    height: 400px;
+    padding-left: 60px;
+    background-color: #555;
+    color: #fff;
 }
 
-/*为边框增加阴影效果*/
-.article-item:hover {
-    /*box-shadow: 1px 1px 1px 1px #ccc;*/
-    box-shadow: #ccc 0px 0px 5px;
+.list .post {
+    width: 800px;
+    height: 100px;
+    line-height: 100px;
+    color: #ba9559;
+    font-size: 16px;
 }
 
-/*设置图片*/
-img {
-    width: 100%;
-    height: 250px;
+.list .post em {
+    position: relative;
+    right: 0px;
 }
 
-/*文字标题*/
-.article-title a {
-    display: block;
-    color: #333;
+.list h2 {
+    height: 100px;
+    line-height: 100px;
+    font-size: 40px;
+    /*强制在一行显示，超出的部分用...代替*/
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+}
+
+.list .abstract {
     font-size: 18px;
-    height: 48px;
-    text-align: left;
+    font-weight: 300;
+    line-height: 2;
+    /*强制只显示两行，超出的部分用...代替*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    -webkit-line-clamp: 2; /** 显示的行数 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
 }
 
-.article-title a:hover {
-    text-decoration: underline;
+.list .read {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+    border: 1px solid #a5a5a5;
+}
+
+.list .discuss {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: url(../../images/blog/discuss.png) 0 center no-repeat;
+    float: right;
+    font-size: 16px;
+    position: relative;
+    top: -30px;
+    right: 60px;
+}
+
+.list a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.list a:hover {
     cursor: pointer;
+    color: #9e8458;
 }
 
-.article-summary {
-    color: #333;
-    margin-bottom: 1em;
-    margin-top: 1em;
-    line-height: 1.5;
-    word-break: break-word;
-    font-size: 1.1em;
+.list .discuss:hover {
+    cursor: pointer;
+    color: #9e8458;
 }
 
-.article-info {
-    padding: 15px;
-}
-
-.article-text {
-    margin-right: 30px;
-    font-size: 15px;
-    font-weight: 400;
-}
-/*评论点击时显示紫色*/
-#comment:active{
-  color: purple;
-}
