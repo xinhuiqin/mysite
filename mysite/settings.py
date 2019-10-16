@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # django-haystack
+    'haystack',
+
     'user.apps.UserConfig',
     'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
@@ -171,7 +174,6 @@ STATICFILES_DIRS = [
 MEDIA_URL = 'static/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
@@ -272,3 +274,11 @@ AUTHENTICATION_BACKENDS = (
 # 统一分页设置
 BASE_PAGINATE_BY = 3
 BASE_PAGINATE_ORPHANS = 5
+# django-haystack 配置
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        # 设置索引文件的保存位置为项目根目录下，目录名为whoosh_index
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    },
+}

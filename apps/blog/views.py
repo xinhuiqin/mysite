@@ -7,6 +7,9 @@ from django.views.generic.detail import DetailView
 from django.conf import settings
 from django.utils.text import slugify
 import markdown
+from haystack.generic_views import SearchView
+from haystack.query import SearchQuerySet
+
 from .models import Article, Category
 
 
@@ -224,3 +227,15 @@ class DetailView(DetailView):
                                      ])
         # obj.body = md.convert(obj.body)
         return obj
+
+
+class ArticleSearchView(SearchView):
+    """
+    搜索视图。
+    自定义搜索视图，出于以下几个目的：
+    1.自定义每页大小
+    2.自定义排序规则
+    3.自定义返回变量的名称
+    """
+    paginate_by = getattr(settings, 'BASE_PAGE_BY', None)
+    context_object_name = 'articles'

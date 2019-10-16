@@ -1,0 +1,11 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+    {% if  query %}
+        {% for foo in  articles %}
+
+        {% empty %}
+            <div><h1>暂时没有文章</h1></div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

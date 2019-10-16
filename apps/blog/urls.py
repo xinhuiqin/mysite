@@ -1,7 +1,11 @@
 # -*- coding:utf-8 -*-
 
 from django.urls import path
-from .views import IndexView, CategoryView, DetailView, ArchiveView
+from .views import IndexView
+from .views import CategoryView
+from .views import DetailView
+from .views import ArchiveView
+from .views import ArticleSearchView
 
 app_name = 'blog'
 urlpatterns = [
@@ -13,4 +17,6 @@ urlpatterns = [
     path('category/<slug:slug>', CategoryView.as_view(), name='category'),
     # 博客归档页
     path('archive/<int:year>/<int:month>', ArchiveView.as_view(), name='archive'),
+    # 博客文章搜索
+    path('search', ArticleSearchView.as_view(), name='search'),
 ]
