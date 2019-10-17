@@ -1,5 +1,6 @@
 {% extends 'home/base.html' %}
 {% load static %}
+{% block head_title %}搜索{% endblock %}
 {% block content %}
     {% if  query %}
         {% for foo in  articles %}

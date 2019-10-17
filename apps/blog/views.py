@@ -13,6 +13,12 @@ from haystack.query import SearchQuerySet
 from .models import Article, Category
 
 
+def test_view(request):
+    """测试函数
+    """
+    return render(request, 'blog/tags/search_box.html',context={})
+
+
 def pagination_data(paginator, page, is_paginated):
     """
      自定义分页方法

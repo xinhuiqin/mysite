@@ -57,3 +57,11 @@ def load_pages(context):
     1.需要访问当前上下文，设置takes_context=True,同时方法第一个参数必须是context
     """
     return context
+
+
+@register.inclusion_tag('blog/tags/search_box.html', takes_context=True)
+def get_search_box(context):
+    """
+    搜索框
+    """
+    return context

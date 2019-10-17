@@ -16,8 +16,15 @@
         </div>
         <!-- 分类、归档 -->
         <div class="container-right">
-            {% get_category_list %}
-            {% get_archive_list %}
+            <div class="get-search-box">
+                {% get_search_box %}
+            </div>
+            <div class="get_category_list">
+                {% get_category_list %}
+            </div>
+            <div class="get_archive_list">
+                {% get_archive_list %}
+            </div>
         </div>
 
     </div>
