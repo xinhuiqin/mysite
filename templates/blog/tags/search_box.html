@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{% static 'css/blog/search_box.css' %}">
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 <div class="search-bar">
-    <form id="searchForm" method="get" action="{% url 'blog:search' %}">
+    <form id="searchForm" method="get" action="{% url 'blog:haystack_search' %}">
         <input class="search" type="search" name="q" placeholder="关键词搜索" required autocomplete="off">
         <button type="submit"></button>
     </form>

@@ -2,11 +2,20 @@
 {% load static %}
 {% block head_title %}搜索{% endblock %}
 {% block content %}
-    {% if  query %}
-        {% for foo in  articles %}
+    {#    {% if  query %}#}
+    {#        {% for foo in  articles %}#}
+    {##}
+    {#        {% empty %}#}
+    {#            <div><h1>暂时没有文章</h1></div>#}
+    {#        {% endfor %}#}
+    {#    {% endif %}#}
+    {% for result in page.object_list %}
 
-        {% empty %}
-            <div><h1>暂时没有文章</h1></div>
-        {% endfor %}
-    {% endif %}
+        <div class="list-group-item">
+            <a >{{ result.object.title }}</a>
+            <br>
+        </div>
+    {% empty %}
+        <h3>未搜索到相关内容！</h3>
+    {% endfor %}
 {% endblock %}

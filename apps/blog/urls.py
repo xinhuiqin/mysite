@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-from django.urls import path
+from django.urls import path, include
 from .views import test_view
 from .views import IndexView
 from .views import CategoryView
@@ -22,4 +22,5 @@ urlpatterns = [
     path('archive/<int:year>/<int:month>/', ArchiveView.as_view(), name='archive'),
     # 博客文章搜索
     path('search/', ArticleSearchView.as_view(), name='search'),
+    path('searchs/', include('haystack.urls')),
 ]

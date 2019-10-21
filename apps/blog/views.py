@@ -245,3 +245,5 @@ class ArticleSearchView(SearchView):
     """
     paginate_by = getattr(settings, 'BASE_PAGE_BY', None)
     context_object_name = 'articles'
+    queryset = SearchQuerySet()
+    print(111, queryset.count())

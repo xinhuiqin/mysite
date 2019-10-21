@@ -276,9 +276,16 @@ BASE_PAGINATE_BY = 3
 BASE_PAGINATE_ORPHANS = 5
 # django-haystack 配置
 HAYSTACK_CONNECTIONS = {
+    # 'default': {
+    #     'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+    #     'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    # },
     'default': {
-        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        # 选择语言解析器为自己更换的结巴分词
+        'ENGINE': 'blog.whoosh_cn_backend.WhooshEngine',
         # 设置索引文件的保存位置为项目根目录下，目录名为whoosh_index
         'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
     },
 }
+# 指定索引更新的时间
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
