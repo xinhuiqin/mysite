@@ -3,12 +3,12 @@
     min-width: 1100px;
     width: 100%;
     min-height: 1500px;
-    height: 100%;
     /*margin-top:因为导航栏设置了fixed属性，所以margin-top设置等于导航栏的高度*/
     margin-top: 80px;
     padding-top: 50px;
 }
-.clear{
+
+.clear {
     clear: both;
 }
 
@@ -27,4 +27,9 @@
 /*搜索框*/
 .get-search-box {
     margin-bottom: 30px;
+}
+
+/*设置父div随子div高度变化而变化,父div不能设置高度*/
+.clear {
+    clear: both;
 }

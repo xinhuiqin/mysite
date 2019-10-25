@@ -4,27 +4,38 @@
 <div id="comment">
     <hr/>
     <span id="cmt_form_title">发表评论</span>
-    <textarea id="comment_content" cols="130" rows="10" maxlength="1000"></textarea>
+    <textarea id="comment_content" cols="130" rows="10" maxlength="1000" onfocus=""></textarea>
     <div id="btn_wrapper">
+        <span id="err_tips" style="display: none;"></span>
         {% if user.is_authenticated %}
-            <button type="button" id="cmt-btn" data-csrf_token="{{ csrf_token }}"
+            <button type="button" id="btn_cmt" data-csrf_token="{{ csrf_token }}"
                     data-article-id="{{ article.id }}" data-ajax-url="{% url 'comment:add_comment' %}">
                 评论
             </button>
         {% else %}
-            <button type="button" id="cmt-btn" data-ajax-url="{% url 'comment:add_comment' %}">评论</button>
+            <a title="评论" id="btn_login">评论</a>
         {% endif %}
     </div>
 </div>
 {#<script src="{% static 'js/comment/comment.js' %}"></script>#}
 <script>
-    $("#cmt-btn").click(function () {
-        var article_id = $(this).data('article-id');
-        var content = $('#comment_content').val();
-        var url = $(this).data('ajax-url');
+    var err_tips = $("#err_tips");
+    $("textarea").focus(function () {
+        err_tips.hide();
+    });
+    $("#btn_login").click(function () {
+        err_tips[0].innerHTML = "登陆后才能评论，请先登陆。";
+        err_tips.show()
+    });
+    $("#btn_cmt").click(function () {
+        var article_id = $(this).data("article-id");
+        var content = $('#comment_content').val().trim();
+        var url = $(this).data("ajax-url");
         var csrf_token = "{{ csrf_token }}";
 
         if (content.length == 0) {
+            err_tips[0].innerHTML = "请输入内容";
+            err_tips.show()
             return false;
         }
 
@@ -47,14 +58,13 @@
                 var cmt_html = "<li class=\"comment-item\">" +
                     "                <span class=\"nickname\">" + cmt.user + "</span>" +
                     "                <time datetime=\"\">" + cmt.create_at + " </time>" +
-                "                <div class=\"content\"><p>" + cmt.content + "</p></div>" +
-                "            </li>";
+                    "                <div class=\"content\"><p>" + cmt.content + "</p></div>" +
+                    "            </li>";
                 $(".comment-list").prepend(cmt_html);
             },
             error: function (data) {
                 alert(data.msg)
             }
         });
-    })
-    ;
+    });
 </script>

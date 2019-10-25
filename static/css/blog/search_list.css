@@ -1,0 +1,96 @@
+/*左侧文章列表*/
+.article-wrapper{
+    margin-top: -40px;
+    margin-bottom: 40px;
+
+}
+.article-wrapper li{
+    margin-top: 40px;
+}
+.article-wrapper li:first-child{
+    margin-top: 40px;
+}
+
+.list {
+    width: 800px;
+    height: 400px;
+    padding-left: 60px;
+    background-color: #555;
+    color: #fff;
+}
+
+.list .post {
+    width: 800px;
+    height: 100px;
+    line-height: 100px;
+    color: #ba9559;
+    font-size: 16px;
+}
+
+.list .post em {
+    position: relative;
+    right: 0px;
+}
+
+.list h2 {
+    height: 100px;
+    line-height: 100px;
+    font-size: 40px;
+    /*强制在一行显示，超出的部分用...代替*/
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+}
+
+.list .abstract {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 2;
+    /*强制只显示两行，超出的部分用...代替*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    -webkit-line-clamp: 2; /** 显示的行数 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+}
+
+.list .read {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+    border: 1px solid #a5a5a5;
+}
+
+.list .discuss {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: url(../../images/blog/discuss.png) 0 center no-repeat;
+    float: right;
+    font-size: 16px;
+    position: relative;
+    top: -30px;
+    right: 60px;
+}
+
+.list a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.list a:hover {
+    cursor: pointer;
+    color: #9e8458;
+}
+
+.list .discuss:hover {
+    cursor: pointer;
+    color: #9e8458;
+}
+

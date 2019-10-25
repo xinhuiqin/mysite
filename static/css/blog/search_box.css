@@ -4,8 +4,9 @@
     margin: 0 auto;
 }
 
+/*输入框*/
 .search-bar input {
-    width: 100%;
+    width: 200px;
     height: 42px;
     border: 1px solid #000;
     background: #ffffff;
@@ -19,7 +20,7 @@
     cursor: pointer;
     background: #555;
     top: 0;
-    right: 0;
+    right: 21px;
     position: absolute;
 }
 
@@ -34,4 +35,6 @@
 
 .search-bar input, button {
     outline: none;
+    font-size: 18px;
+    color: #000;
 }

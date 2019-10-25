@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/blog/search_list.css' %}">
+<div class="article-wrapper">
+        {% for article in articles %}
+            <ul>
+                <li>
+                    <div class="list">
+                        <div class="post"><span>{{ article.object.create_at|date:"Y年m月d日" }}</span>
+                            <em>{{ article.object.author }}</em>
+                        </div>
+                        <h2 title="{{ article.object.title }}">{{ article.object.title }}</h2>
+                        <div class="abstract">
+                            摘要：{{ article.object.body|truncatechars:64|safe }}<br/>
+                        </div>
+                        <div class="read"><a href="{{ article.object.get_absolute_url }}" target="_blank"
+                                             title="{{ article.object.title }}">阅读全文</a></div>
+                        <div class="discuss"><a id="comment" href="{{ article.object.get_absolute_url }}#comment">评论</a></div>
+                    </div>
+                </li>
+            </ul>
+        {% empty %}
+            <div class="no-article"><p>暂时没有文章!</p></div>
+        {% endfor %}
+</div>

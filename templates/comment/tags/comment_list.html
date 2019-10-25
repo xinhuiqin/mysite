@@ -7,11 +7,11 @@
         {% for comment in comment_list %}
             <li class="comment-item">
                 <span class="nickname">{{ comment.user }}</span>
-                <time datetime="{{ comment.create_at }}">{{ comment.create_at }}</time>
-                <div class="content">{{ comment.content|linebreaks }}</div>
+                <time datetime="{{ comment.create_at }}" style="float: right;">{{ comment.create_at }}</time>
+                <div class="cmt_content">{{ comment.content|linebreaksbr }}</div>
             </li>
         {% empty %}
-            <span>暂无评论</span>
+            <span></span>
         {% endfor %}
     </ul>
 </div>

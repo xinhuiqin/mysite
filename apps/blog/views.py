@@ -5,10 +5,8 @@ from django.shortcuts import get_list_or_404
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.conf import settings
-from django.utils.text import slugify
 import markdown
 from haystack.generic_views import SearchView
-from haystack.query import SearchQuerySet
 
 from .models import Article, Category
 
@@ -231,7 +229,6 @@ class DetailView(DetailView):
                                          'markdown.extensions.codehilite',
                                          'markdown.extensions.toc',
                                      ])
-        # obj.body = md.convert(obj.body)
         return obj
 
 
@@ -243,7 +240,6 @@ class ArticleSearchView(SearchView):
     2.自定义排序规则
     3.自定义返回变量的名称
     """
+    template_name = 'search/search.html'
     paginate_by = getattr(settings, 'BASE_PAGE_BY', None)
     context_object_name = 'articles'
-    queryset = SearchQuerySet()
-    print(111, queryset.count())

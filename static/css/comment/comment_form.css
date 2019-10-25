@@ -27,13 +27,45 @@ hr {
 #btn_wrapper {
     height: 30px;
 }
-#cmt-btn {
-    float: right;
-    color: #fff;
-    background-color: #337ab7;
+
+#btn_cmt, #btn_login {
     display: inline-block;
-    font-size: 14px;
-    padding: 6px 12px;
-    border: 1px solid transparent;
-    border-radius: 4px;
+    overflow: visible;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    background-color: #44b549;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #44b549), to(#44b549));
+    background-image: linear-gradient(to bottom, #44b549 0, #44b549 100%);
+    border-color: #44b549;
+    color: #fff;
+    height: 33px;
+    line-height: 33px;
+    *line-height: 31px;
+    width: 120px;
+    padding-left: 0;
+    padding-right: 0;
+    float: right;
+    font-size: 18px;
+}
+
+#btn_cmt:hover, #btn_login:hover {
+    background-color: #2f9833;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2f9833), to(#2f9833));
+    background-image: linear-gradient(to bottom, #2f9833 0, #2f9833 100%);
+    border-color: #2f9833;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    color: #fff;
+}
+
+#err_tips {
+    color: #fa5151;
+    font-size: 18px;
 }

@@ -11,7 +11,7 @@ from .views import ArticleSearchView
 app_name = 'blog'
 urlpatterns = [
     # 测试用
-    path('test_view/', test_view, name='test_view'),
+    path('test/', test_view, name='test'),
     # 博客首页
     path('', IndexView.as_view(), name='index'),
     # 博客详情页,将接收到的slug转为slug类型
@@ -22,5 +22,4 @@ urlpatterns = [
     path('archive/<int:year>/<int:month>/', ArchiveView.as_view(), name='archive'),
     # 博客文章搜索
     path('search/', ArticleSearchView.as_view(), name='search'),
-    path('searchs/', include('haystack.urls')),
 ]

@@ -1,21 +1,31 @@
 {% extends 'home/base.html' %}
 {% load static %}
 {% block head_title %}搜索{% endblock %}
-{% block content %}
-    {#    {% if  query %}#}
-    {#        {% for foo in  articles %}#}
-    {##}
-    {#        {% empty %}#}
-    {#            <div><h1>暂时没有文章</h1></div>#}
-    {#        {% endfor %}#}
-    {#    {% endif %}#}
-    {% for result in page.object_list %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/blog/search.css' %}">
+{% endblock %}
+{% load blog_tags %}
 
-        <div class="list-group-item">
-            <a >{{ result.object.title }}</a>
-            <br>
+{% block content %}
+    <div class="container">
+        <div class="container-left">
+            <!-- 文章列表 -->
+            {% load_search_list articles %}
+            <!-- 分页 -->
+            {% if is_paginated %}{% load_pages %}{% endif %}
         </div>
-    {% empty %}
-        <h3>未搜索到相关内容！</h3>
-    {% endfor %}
+        <!-- 分类、归档 -->
+        <div class="container-right">
+            <div class="get-search-box">
+                {% get_search_box %}
+            </div>
+            <div class="get_category_list">
+                {% get_category_list %}
+            </div>
+            <div class="get_archive_list">
+                {% get_archive_list %}
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
 {% endblock %}

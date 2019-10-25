@@ -10,3 +10,9 @@
     font-size: 24px;
     font-weight: bold;
 }
+.comment-item{
+     border-top: 1px solid #cccccc;
+}
+.cmt_content{
+    padding: 5px 0px;
+}
