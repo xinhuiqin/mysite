@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from apps.home.views import page_not_found
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
@@ -25,3 +26,5 @@ urlpatterns = [
                   path('blog/', include('blog.urls', namespace='blog')),
                   path('comment/', include('comment.urls', namespace='comment')),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+handler404 = page_not_found
