@@ -1,9 +1,9 @@
 {% extends 'home/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home/404.css' %}">
 {% block head_title %}
     404
 {% endblock %}
 {% block content %}
-    <h1>请求的页面不存在
-        <button><a href="javascript:history.go(-1);">返回主页</a></button>
-    </h1>
+    <p class="error"><h1>请求的页面不存在</h1></p>
 {% endblock %}

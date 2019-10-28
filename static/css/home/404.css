@@ -1,0 +1,9 @@
+@charset "UTF-8";
+#content{
+    min-height: 980px;
+    margin-top: 80px;
+    text-align: center;
+}
+.error{
+    height: 980px;
+}
