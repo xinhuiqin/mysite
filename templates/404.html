@@ -1,6 +1,8 @@
 {% extends 'home/base.html' %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/home/404.css' %}">
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home/404.css' %}">
+{% endblock %}
 {% block head_title %}
     404
 {% endblock %}
