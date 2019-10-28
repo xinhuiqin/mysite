@@ -46,13 +46,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # django-allauth
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     # django-haystack
     'haystack',
+    #  django-ckeditor
+    'ckeditor',
+    'ckeditor_uploader',
 
     'user.apps.UserConfig',
     'home.apps.HomeConfig',
@@ -289,3 +292,34 @@ HAYSTACK_CONNECTIONS = {
 }
 # 指定索引更新的时间
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+# 指定django-ckeditor文件上传路径,这是一个相对路径，相对于MEDIA_ROOT的路径
+CKEDITOR_UPLOAD_PATH = "ckeditor_uploads/"
+
+# ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'skin': 'moono-lisa',
+        'toolbar_Basic': [
+            ['Source', '-', 'Bold', 'Italic']
+        ],
+        'toolbar_Full': [
+            [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ],
+            [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ],
+
+            [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ],
+            [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ],
+            '/',
+            [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ],
+            [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv', '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ],
+            [ 'Link','Unlink','Anchor' ],
+            [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ],
+            '/',
+            [ 'Styles','Format','Font','FontSize' ] ,
+            [ 'TextColor','BGColor' ] ,
+            [ 'Maximize', 'ShowBlocks','-','About' ] ,
+
+        ],
+        'toolbar': 'Full',
+    }
+}

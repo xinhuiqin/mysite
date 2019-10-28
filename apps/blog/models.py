@@ -2,7 +2,9 @@
 from django.db import models
 from django.conf import settings
 from django.shortcuts import reverse
+from ckeditor.fields import RichTextField
 import markdown
+
 
 # 状态
 STATUS = (
@@ -99,7 +101,7 @@ class Article(models.Model):
     keywords = models.ManyToManyField(Keyword, verbose_name='文章关键词')
     title = models.CharField(max_length=50, verbose_name='文章标题')
     summary = models.TextField(max_length=250, blank=True, default='', verbose_name='文章摘要')
-    body = models.TextField(verbose_name='文章内容')
+    body = RichTextField(verbose_name='文章内容')
     # ImageField依赖Pillow库
     img_link = models.ImageField(default=IMG_LINK, upload_to='article/%Y%m%d%H%M%S', max_length=255, verbose_name='文章图片')
     views = models.IntegerField(default=0, verbose_name='文章阅读量')
