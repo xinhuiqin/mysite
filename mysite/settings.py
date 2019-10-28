@@ -31,7 +31,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 SECRET_KEY = '4d#v@ww8hq@)q5^iw@s)_%z@ltzn3y3(dsvaft981ue@ejff(q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.3/ref/settings/#allowed-hosts
