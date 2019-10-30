@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block head_title %}
+    消息通知
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/comment/notification.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="msg">
+        <div class="left_box">
+            <ul class="aside">
+                {% url 'comment:notification' as all_url %}
+                {% url 'comment:notification_no_read' as no_read__url %}
+                {% url 'comment:notification_read' as read_url %}
+                <li class="msg_item  {% if request.path == all_url %}active{% endif %}">
+                    <a class="msg_a" href="{{ all_url }}">全部消息</a>
+                </li>
+                <li class="msg_item {% if request.path == no_read__url %}active{% endif %}">
+                    <a class="msg_a"  msg_a href="{{ no_read__url }}">已读消息</a>
+                </li>
+                <li class="msg_item {% if request.path == read_url %}active{% endif %}">
+                    <a class="msg_a"  href="{{ read_url }}">未读消息</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right_box"></div>
+    </div>
+{% endblock %}

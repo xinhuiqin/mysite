@@ -1,0 +1,39 @@
+@charset "UTF-8";
+#content {
+    min-height: 980px;
+    margin-top: 80px;
+}
+
+/*左边导航栏*/
+.left_box {
+    width: 200px;
+    float: left;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+}
+
+.msg_item {
+    height: 38px;
+    width: 100%;
+    line-height: 38px;
+    font-size: 14px;
+    color: #4d4d4d;
+    padding-left: 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1px;
+    position: relative;
+}
+.left_box .aside li .msg_a{
+    color: #000;
+    display: block;
+}
+.msg_item:hover{
+    background: rgba(68, 181, 73, 0.3);
+}
+.aside .active{
+    background-color: #2f9833;
+}
+.left_box .aside li.active .msg_a {
+    color: #fff;
+}

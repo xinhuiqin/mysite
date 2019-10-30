@@ -37,3 +37,11 @@ def add_comment(request):
         cmt['content'] = article_cmt.content
 
     return HttpResponse(json.dumps(ret))
+
+
+@login_required
+def notification(request, is_read=None):
+    context = {
+        'is_read': is_read,
+    }
+    return render(request, 'comment/notification.html', context=context)

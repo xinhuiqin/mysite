@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
-from django.db import models
 from django.conf import settings
+from django.db import models
 
 
 class Comment(models.Model):
@@ -36,3 +36,26 @@ class ArticleComment(Comment):
         verbose_name = '文章评论'
         verbose_name_plural = verbose_name
         ordering = ('-id',)
+
+
+class Notification(models.Model):
+    sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='notif_sender',
+                               verbose_name='发送者')
+    receiver = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                                 related_name='notif_receiver', verbose_name='接收者')
+    comment = models.ForeignKey(ArticleComment, on_delete=models.CASCADE, related_name='notif_comment',
+                                verbose_name='所属评论')
+    create_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+    is_read = models.IntegerField(default=0, verbose_name='是否已读')
+
+    class Meta:
+        verbose_name = '消息通知'
+        verbose_name_plural = verbose_name
+        ordering = ['-create_at']
+
+    def __str__(self):
+        return '{0}评论了你的文章{1}'.format(self.sender, self.comment)
+
+    def mark_read(self):
+        self.is_read = 1
+        self.save(update_fields=['is_read'])
