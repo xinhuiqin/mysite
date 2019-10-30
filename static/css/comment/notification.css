@@ -2,6 +2,13 @@
 #content {
     min-height: 980px;
     margin-top: 80px;
+    background: #f5f6f7;
+}
+
+.msg {
+    width: 1200px;
+    height: 90%;
+    margin: 16px auto 0;
 }
 
 /*左边导航栏*/
@@ -24,16 +31,20 @@
     margin-bottom: 1px;
     position: relative;
 }
-.left_box .aside li .msg_a{
+
+.left_box .aside li .msg_a {
     color: #000;
     display: block;
 }
-.msg_item:hover{
+
+.msg_item:hover {
     background: rgba(68, 181, 73, 0.3);
 }
-.aside .active{
+
+.aside .active {
     background-color: #2f9833;
 }
+
 .left_box .aside li.active .msg_a {
     color: #fff;
 }

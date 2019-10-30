@@ -323,3 +323,9 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'Full',
     }
 }
+
+# 状态
+STATUS = (
+    (1, "启用"),
+    (0, "禁用"),
+)

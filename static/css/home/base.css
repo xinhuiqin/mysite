@@ -19,7 +19,9 @@ a {
     list-style: none;
     text-decoration: none;
 }
-
+li {
+    list-style: none;
+}
 .banner {
     position: fixed;
     top: 0px;

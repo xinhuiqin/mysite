@@ -46,6 +46,7 @@ class Notification(models.Model):
     comment = models.ForeignKey(ArticleComment, on_delete=models.CASCADE, related_name='notif_comment',
                                 verbose_name='所属评论')
     create_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+    status = models.IntegerField(default=1, choices=settings.STATUS, verbose_name='状态')
     is_read = models.IntegerField(default=0, verbose_name='是否已读')
 
     class Meta:
