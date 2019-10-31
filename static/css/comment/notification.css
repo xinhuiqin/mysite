@@ -9,6 +9,7 @@
     width: 1200px;
     height: 90%;
     margin: 16px auto 0;
+    padding: 50px 0 0 0;
 }
 
 /*左边导航栏*/
@@ -17,6 +18,7 @@
     float: left;
     -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    background-color: #fff;
 }
 
 .msg_item {
@@ -47,4 +49,31 @@
 
 .left_box .aside li.active .msg_a {
     color: #fff;
+}
+
+/*右侧导航栏*/
+.right_box {
+    position: relative;
+    margin-left: 200px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    min-height: 520px
+}
+.btn_del_all {
+    color: #ffffff;
+    background-color: #28a745;
+    border:none #28a745;
+    padding: 6px 12px;
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    float: right;
+    outline: none;
+}
+
+.btn_del_all:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    cursor: pointer;
 }

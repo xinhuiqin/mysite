@@ -69,8 +69,6 @@ def get_search_box(context):
 
 @register.inclusion_tag('blog/tags/search_list.html')
 def load_search_list(articles):
-    for r in articles:
-        print(111, r.object.title)
     """
 
     文章列表标签模板

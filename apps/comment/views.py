@@ -5,8 +5,11 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.http import HttpResponse
+
+from . import handlers
 # 不能写成from apps.blog.models import Article
 from .models import ArticleComment
+
 
 user_model = settings.AUTH_USER_MODEL
 
