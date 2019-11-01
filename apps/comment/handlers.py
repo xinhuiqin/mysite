@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# post_save信号：在模型save()方法之后调用
 from django.db.models.signals import post_save
 from .models import ArticleComment, Notification
 
@@ -27,11 +28,10 @@ def notify_handler(sender, instance, created, **kwargs):
         else:
             '''如果评论是一个一级评论而不是回复其他评论并且不是作者自评，则直接通知给文章作者'''
             receiver = the_article.author
-            print(sender)
-            print(receiver)
             if sender != receiver:
                 new_notify = Notification(sender=sender, receiver=receiver, comment=instance)
                 new_notify.save()
 
 
+# 信号和接收者函数绑定
 post_save.connect(notify_handler, sender=ArticleComment)
