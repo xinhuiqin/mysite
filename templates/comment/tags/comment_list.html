@@ -8,7 +8,7 @@
             <li class="comment-item">
                 <span class="nickname">{{ comment.user }}</span>
                 <time datetime="{{ comment.create_at }}" style="float: right;">{{ comment.create_at }}</time>
-                <div class="cmt_content">{{ comment.content|linebreaksbr }}</div>
+                <div class="cmt_content" id="cmt_content_{{ comment.id }}">{{ comment.content|linebreaksbr }}</div>
             </li>
         {% empty %}
             <span></span>

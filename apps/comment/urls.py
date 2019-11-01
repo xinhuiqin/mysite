@@ -6,6 +6,6 @@ app_name = 'comment'
 urlpatterns = [
     path('add/', views.add_comment, name='add_comment'),
     path('notification/', views.notification, name='notification'),
-    path('notification/no-read/', views.notification, {'is_read': 'false'}, name='notification_no_read'),
+    path('notification/no-read/', views.notification, {'is_read': 'False'}, name='notification_no_read'),
     path('notification/read/', views.notification, {'is_read': 'True'}, name='notification_read'),
 ]

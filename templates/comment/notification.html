@@ -7,35 +7,45 @@
     <link rel="stylesheet" href="{% static 'css/comment/notification.css' %}">
 {% endblock %}
 {% block content %}
-    <div class="msg">
+    <div class="msg clear">
         <div class="left_box">
             <ul class="aside">
                 {% url 'comment:notification' as all_url %}
-                {% url 'comment:notification_no_read' as no_read__url %}
                 {% url 'comment:notification_read' as read_url %}
+                {% url 'comment:notification_no_read' as no_read__url %}
                 <li class="msg_item  {% if request.path == all_url %}active{% endif %}">
                     <a class="msg_a" href="{{ all_url }}">全部消息</a>
                 </li>
-                <li class="msg_item {% if request.path == no_read__url %}active{% endif %}">
-                    <a class="msg_a" msg_a href="{{ no_read__url }}">已读消息</a>
-                </li>
                 <li class="msg_item {% if request.path == read_url %}active{% endif %}">
-                    <a class="msg_a" href="{{ read_url }}">未读消息</a>
+                    <a class="msg_a" msg_a href="{{ read_url }}">已读消息</a>
+                </li>
+                <li class="msg_item {% if request.path == no_read__url %}active{% endif %}">
+                    <a class="msg_a" href="{{ no_read__url }}">未读消息</a>
                 </li>
             </ul>
         </div>
         <div class="right_box">
-            <div class="msg_info">
+            <div class="msg_info clearfix">
                 <button class="btn_del_all">清空所有消息</button>
             </div>
             <div class="msg_list">
                 {% get_notifications user is_read as notifications %}
                 <ul>
                     {% for notification in  notifications %}
-                        <li>{{ notification.sender }}</li>
+                        <li>
+                            <span class="msg_type">用户</span>
+                            <span class="msg_title">{{ notification.sender }}&nbsp;&nbsp;在文章
+                                <a href="{{ notification.comment.article.get_absolute_url }}#cmt_content_{{ notification.comment.id }}"
+                                   target="_blank">{{ notification.comment.article.title }}</a>中回复了你
+                            </span>
+                            <div class="msg_comment">
+                                <span>{{ notification.comment }}</span>
+                            </div>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
+        <div class="clear"></div>
     </div>
 {% endblock %}
