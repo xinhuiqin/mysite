@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # 允许以github账号登陆
+    'allauth.socialaccount.providers.github',
     # django-haystack
     'haystack',
     #  django-ckeditor
