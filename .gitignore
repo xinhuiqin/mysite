@@ -1,4 +1,4 @@
-# .gitignore格式规范如下：
+# .gitignore格式规范（详见https://git-scm.com/docs/gitignore#_pattern_format）如下：
 #1.以注释符号#开头的行会被git忽略。
 #2.匹配模式最后跟着反斜杠（/）说明要忽略的是目录。
 #3.要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。
