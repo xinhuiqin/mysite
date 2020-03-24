@@ -208,7 +208,7 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'verbose',
-            'filename': LOG_PATH, # 必须保证用户对该目录有读写权限
+            'filename': LOG_PATH,  # 必须保证用户对该目录有读写权限
         },
     },
     'loggers': {
@@ -306,20 +306,21 @@ CKEDITOR_CONFIGS = {
             ['Source', '-', 'Bold', 'Italic']
         ],
         'toolbar_Full': [
-            [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ],
-            [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ],
+            ['Source', '-', 'Save', 'NewPage', 'DocProps', 'Preview', 'Print', '-', 'Templates'],
+            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],
 
-            [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ],
-            [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ],
+            ['Find', 'Replace', '-', 'SelectAll', '-', 'SpellChecker', 'Scayt'],
+            ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
             '/',
-            [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ],
-            [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv', '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ],
-            [ 'Link','Unlink','Anchor' ],
-            [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ],
+            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
+             'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl'],
+            ['Link', 'Unlink', 'Anchor'],
+            ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe'],
             '/',
-            [ 'Styles','Format','Font','FontSize' ] ,
-            [ 'TextColor','BGColor' ] ,
-            [ 'Maximize', 'ShowBlocks','-','About' ] ,
+            ['Styles', 'Format', 'Font', 'FontSize'],
+            ['TextColor', 'BGColor'],
+            ['Maximize', 'ShowBlocks', '-', 'About'],
 
         ],
         'toolbar': 'Full',
