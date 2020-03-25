@@ -27,5 +27,6 @@ urlpatterns = [
                   path('comment/', include('comment.urls', namespace='comment')),
                   path('ckeditor/', include('ckeditor_uploader.urls')),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+print(urlpatterns)
 
 handler404 = page_not_found

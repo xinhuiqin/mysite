@@ -13,32 +13,26 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import sys
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# 项目根目录，示例：/home/mysite
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# 初始化配置参数:用于正式环境
-config_file_path = os.path.join(BASE_DIR, "pro_settings.py")
-if os.path.exists(config_file_path):
-    import pro_settings as settings
 
-# add apps to the sys.path
+# 设置生产环境的配置文件
+config_file_path = os.path.join(BASE_DIR, "prod_settings.py")
+if os.path.exists(config_file_path):
+    import prod_settings as settings
+
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '4d#v@ww8hq@)q5^iw@s)_%z@ltzn3y3(dsvaft981ue@ejff(q'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# 生产环境要设置为False，本地测试的时候设置为True
+DEBUG = True
 
-# Hosts/domain names that are valid for this site; required if DEBUG is False
-# See https://docs.djangoproject.com/en/1.3/ref/settings/#allowed-hosts
+# 允许的IP，*表示所有
 ALLOWED_HOSTS = ["*"]
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -101,8 +95,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     # sqlite3
@@ -124,8 +116,6 @@ DATABASES = {
 
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -142,9 +132,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/2.2/topics/i18n/
-
 LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'Asia/Shanghai'
@@ -155,39 +142,23 @@ USE_L10N = True
 
 USE_TZ = False
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+# 静态文件设置
 STATIC_URL = '/static/'
 
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'collect_static')
-
-# Additional locations of static files
 STATICFILES_DIRS = [
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
     os.path.join(BASE_DIR, 'static')
-
 ]
+# 部署时，收集的静态文件放到该目录
+STATIC_ROOT = os.path.join(BASE_DIR, 'collectstatic')
 
 # 媒体文件收集
 MEDIA_URL = 'static/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
+# 项目日志设置
 WORK_PATH = os.path.abspath(os.path.dirname(__file__))
 PRJ_NAME = os.path.split(WORK_PATH)[-1]
 LOG_PATH = "/var/log/sweeneys/mysite/%s.log" % PRJ_NAME
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -224,8 +195,9 @@ LOGGING = {
         },
     }
 }
-# 自定义用户模型
-AUTH_USER_MODEL = 'user.USER'  # user是应用名，USER是模型名
+
+# 自定义用户模型user是应用名，USER是模型名
+AUTH_USER_MODEL = 'user.USER'
 
 # 网站默认设置和上下文信息
 SITE_END_TITLE = os.getenv('Sweeneys_SITE_END_TITLE', 'Sweeneys')
@@ -258,8 +230,6 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 0.01
 #  django-allauth设置验证邮箱后自动登陆
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = '/accounts/login'
-
-# ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = '/accounts/login'
 
 # django-allauth设置登录成功后重定向的页面，默认是/accounts/profile/
 LOGIN_REDIRECT_URL = "/"
@@ -312,6 +282,7 @@ CKEDITOR_CONFIGS = {
             ['Find', 'Replace', '-', 'SelectAll', '-', 'SpellChecker', 'Scayt'],
             ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
             '/',
+
             ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
              'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl'],
