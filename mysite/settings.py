@@ -27,7 +27,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 SECRET_KEY = '4d#v@ww8hq@)q5^iw@s)_%z@ltzn3y3(dsvaft981ue@ejff(q'
 
 # 生产环境要设置为False，本地测试的时候设置为True
-DEBUG = True
+DEBUG = False
 
 # 允许的IP，*表示所有
 ALLOWED_HOSTS = ["*"]
